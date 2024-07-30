@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memberships</title>
+        <link rel="stylesheet" href="../css/web.css">
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+        <style>
+            .membership-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 75vh;
+                gap: 2rem;
+            }
+            .membership-plan {
+                flex: 1;
+                max-width: 400px;
+                padding: 20px;
+                background-color: whitesmoke;
+                border-radius: 30px;
+                text-align: center;
+            }
+            .plan-title {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .plan-price {
+                font-size: 48px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .plan-features {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .plan-features li {
+                margin-bottom: 20px;
+            }
+            .plan-button {
+                padding: 10px;
+                background-color: maroon;
+                color: white;
+                border-radius: 15px;
+                border: none;
+                font-size: medium;
+            }
+            @media (max-width: 1250px) {
+                .pricing-container {
+                    flex-direction: column;
+                    height: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <img src="../images/logo-transparent.png" height="100" class="logo">
+            <li><a href="../index.html">Home</a></li>
+            <li>Visit</li>
+            <li>Calendar</li>
+            <li><a href="./memberships.html">Memberships</a></li>
+            <li>Weddings</li>
+            <li>Volunteers</li>
+            <li>Cafe</li>
+            <li>Photos</li>
+        </header>
+        <div class="membership-container">
+            <div class="membership-plan">
+                <div class="plan-title">Single</div>
+                <div class="plan-price">$65/year</div>
+                <ul class="plan-features">
+                    <li>✅ Admission for 1 adult</li>
+                    <li>✅ Express entry during events</li>
+                    <li>✅ 10% shop discount</li>
+                </ul>
+                <button class="plan-button">Sign Up</button>
+            </div>
+            <div class="membership-plan">
+                <div class="plan-title">Dual</div>
+                <div class="plan-price">$75/year</div>
+                <ul class="plan-features">
+                    <li>✅ Admission for 2 adults</li>
+                    <li>✅ Express entry during events</li>
+                    <li>✅ 10% shop discount</li>
+                </ul>
+                <button class="plan-button">Sign Up</button>
+            </div>
+            <div class="membership-plan">
+                <div class="plan-title">Child</div>
+                <div class="plan-price">$25/year</div>
+                <ul class="plan-features">
+                    <li>✅ Admission for 1 child</li>
+                    <li>✅ Express entry during events</li>
+                    <li>✅ 10% shop discount</li>
+                </ul>
+                <button class="plan-button">Sign Up</button>
+            </div>
+        </div>
+    </body>
+</html>
