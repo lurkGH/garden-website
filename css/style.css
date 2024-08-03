@@ -1,0 +1,81 @@
+/*****Index*****/
+
+/*Header*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Passion One", sans-serif;
+}
+header {
+  background-color: rgb(21, 92, 21);
+  background-size: 40%;
+  background-position: center;
+}
+header ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  gap: 0.1rem 2rem;
+  color: white;
+  list-style: none;
+}
+
+/*Navbar*/
+.navbar {
+  background-color: honeydew;
+  margin: auto;
+  padding: 1.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+.navbar ul li a {
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+}
+.nav-logo {
+  width: 120px;
+}
+
+/*Slideshow*/
+.slideshow {
+  background-image: url(../images/local-gardens-main.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+h1 {
+  font-family: "Playwrite DK Uloopet", cursive;
+  font-size: 5rem;
+  color: white;
+  text-align: center;
+  padding-top: 20%;
+}
+h2 {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  padding-top: 3%;
+  padding-bottom: 35%;
+}
+
+/*Article*/
+article {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+article h3 {
+  padding: 2%;
+}
+article p {
+  padding: 1%;
+}
