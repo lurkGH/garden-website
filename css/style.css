@@ -25,14 +25,14 @@ header ul {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0.25rem 1rem 0.25rem 1rem;
+  padding: 0.25rem .5rem 0.25rem .5rem;
   gap: 0.1rem 2rem;
   color: white;
   list-style: none;
 }
 
 /*Navbar*/
-.navbar {
+nav {
   background-color: honeydew;
   margin: auto;
   padding: 1.5%;
@@ -40,14 +40,18 @@ header ul {
   align-items: center;
   justify-content: space-between;
 }
-.navbar ul li {
+nav ul li {
   list-style: none;
   display: inline-block;
   margin: 0 20px;
 }
-.navbar ul li a {
+nav ul li a {
   font-size: 1.5rem;
   color: black;
+  text-decoration: none;
+}
+li[href^="tel"] {
+  color: inherit;
   text-decoration: none;
 }
 .nav-logo {
@@ -64,7 +68,7 @@ header ul {
 }
 h1 {
   font-family: "Playwrite DK Uloopet", cursive;
-  font-size: 5rem;
+  font-size: 4rem;
   color: white;
   text-align: center;
   padding-top: 10%;
