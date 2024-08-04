@@ -1,5 +1,14 @@
 /*****Index*****/
 
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  width: 100%;
+}
+
 /*Header*/
 * {
   margin: 0;
@@ -58,14 +67,14 @@ h1 {
   font-size: 5rem;
   color: white;
   text-align: center;
-  padding-top: 20%;
+  padding-top: 10%;
 }
 h2 {
   font-size: 2rem;
   color: white;
   text-align: center;
   padding-top: 3%;
-  padding-bottom: 35%;
+  padding-bottom: 15%;
 }
 
 /*Article*/
