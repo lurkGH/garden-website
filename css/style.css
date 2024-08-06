@@ -1,24 +1,21 @@
 /*****Index*****/
 
 /*Overall*/
-html, body {
-  overflow-x: hidden;
-}
-
-body {
-  position: relative;
-  width: 100%;
-}
-
-/*Header*/
 * {
   padding: 0;
   margin: 0;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+html, body {
+  overflow-x: hidden;
+}
 body {
+  position: relative;
+  width: 100%;
   background-color: white;
 }
+
+/*Header*/
 header {
   background-color: rgb(21, 92, 21);
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(255,255,255,.2));
@@ -29,28 +26,42 @@ header {
 header ul {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
-  padding: 0.25rem .5rem 0.25rem .5rem;
-  gap: 0.1rem 2rem;
-  font-size: .8rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+  gap: 0rem 1.5rem;
+  font-size: 0.8rem;
   color: white;
   list-style: none;
+}
+header img {
+  gap: 0rem .5rem;
 }
 
 /*Navbar*/
 nav {
   background-color: floralwhite;
-  margin: auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
 }
-nav ul li {
+nav a {
+  margin-right: auto;
+  justify-content: flex-start;
+}
+.nav-logo {
+  width: 100px;
+  padding: .3rem .5rem 0rem .5rem;
+}
+nav ul {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: .3rem 1rem;
+  padding: 0.2rem 1.5rem;
+  margin-left: auto;
   list-style: none;
-  display: inline-block;
-  margin: 0 1.5rem;
 }
 nav ul li a {
   font-size: 1.25rem;
@@ -59,15 +70,11 @@ nav ul li a {
 }
 nav ul li a:hover {
   color: #765043;
+  text-decoration: underline 1px;
 }
 nav ul li a:visited {
   color: black;
 }
-.nav-logo {
-  width: 100px;
-  padding: .4rem .5rem 0.2rem .75rem;
-}
-
 
 /*Slideshow*/
 .slideshow {
