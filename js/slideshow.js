@@ -11,7 +11,7 @@ function preload(_slides, callback) {
         let imageLink = _slides[i];
         let img = new Image();
         // Extracts the pathname, excluding url()
-        img.src = imageLink.slice(5, -1);
+        img.src = imageLink.slice(4, -1);
         // Adds to count when image has loaded
         img.onload = function() {
             loadedImagesCount++;
