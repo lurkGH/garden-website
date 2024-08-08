@@ -8,11 +8,16 @@
 }
 html, body {
   overflow-x: hidden;
+  min-height: 100%;
 }
 body {
   background-color: floralwhite;
   position: relative;
   width: 100%;
+}
+.page-container {
+  position: relative;
+  min-height: 100vh;
 }
 
 /*Header*/
@@ -92,7 +97,7 @@ nav ul li a:visited {
 
 /*Slideshow*/
 .slideshow {
-  background-image: url(../images/slideshow-1.webp);
+  background-image: url(/images/slideshow-1.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -169,7 +174,6 @@ article {
   background-color: floralwhite;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  min-height: 40vh;
   width: 95%;
   margin: auto;
 }
@@ -182,6 +186,9 @@ article p {
 
 /*Footer*/
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: rgb(21, 92, 21);
   background-image: linear-gradient(rgba(255,255,255,.2), rgba(0,0,0,0.3));
   border-style: solid;
@@ -200,20 +207,32 @@ footer ul {
 }
 
 /*****Photos*****/
+.gallery {
+  background-color: black;
+}
 #gallery-highlight {
   width: auto;
   width: 100vw;
   max-height: 70vh;
-  padding: 3rem 0;
+  padding: 0rem 0;
   margin: 0;
   background-color: black;
 }
 .thumbnails-container {
   display: flex;
-  margin: 0;
-  border: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 2.5rem;
 }
 .gallery-thumbnails {
-  width: 30vw;
+  width: 25vw;
   background-color: black;
+}
+.gallery-thumbnails:hover {
+  cursor: pointer;
+  opacity: 70%;
 }
