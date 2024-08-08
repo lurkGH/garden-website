@@ -1,7 +1,7 @@
 const slides = [
-    "url(./images/slideshow-1.png)",
-    "url(./images/slideshow-2.png)",
-    "url(./images/slideshow-3.png)"
+    "url(./images/slideshow-1.webp)",
+    "url(./images/slideshow-2.webp)",
+    "url(./images/slideshow-3.webp)"
 ];
 let currIndex = 0;
 let slideshowTimeout;
