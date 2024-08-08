@@ -97,7 +97,7 @@ nav ul li a:visited {
 
 /*Slideshow*/
 .slideshow {
-  background-image: url(/images/slideshow-1.webp);
+  background-image: url(../images/slideshow-1.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -211,11 +211,13 @@ footer ul {
   background-color: black;
 }
 #gallery-highlight {
+  display: block;
   width: auto;
   width: 100vw;
   max-height: 70vh;
   padding: 0rem 0;
-  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   background-color: black;
 }
 .thumbnails-container {
