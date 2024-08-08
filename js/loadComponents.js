@@ -2,8 +2,12 @@ function loadHTML(tagName, filePath) {
     const elements = document.getElementsByTagName(tagName);
     if (elements.length > 0) {
       fetch(filePath)
-        .then(response => response.text())
-        .then(data => elements[0].innerHTML = data);
+        .then(function(response) {
+          return response.text();
+        })
+        .then(function(data) {
+          elements[0].innerHTML = data;
+        })
     }
   }
   
