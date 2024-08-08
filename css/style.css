@@ -209,6 +209,7 @@ footer ul {
 /*****Photos*****/
 .gallery {
   background-color: black;
+  padding-top: 1rem;
 }
 #gallery-highlight {
   display: block;
@@ -237,4 +238,10 @@ footer ul {
 .gallery-thumbnails:hover {
   cursor: pointer;
   opacity: 70%;
+}
+@media all and (min-width: 768px) {
+  .gallery-thumbnails {
+    width: auto;
+    height: 10vh;
+  }
 }
