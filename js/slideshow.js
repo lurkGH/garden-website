@@ -42,7 +42,7 @@ function startSlideshow() {
             currIndex++;
         }
         slideshow.style.backgroundImage = slides[currIndex];
-        setTimeout(showNextSlide, 2500); // 1000 = 1 second
+        setTimeout(showNextSlide, 4000); // 1000 = 1 second
     }
     showNextSlide();
 }
