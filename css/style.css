@@ -214,8 +214,7 @@ footer ul {
 }
 #gallery-highlight {
   display: block;
-  width: auto;
-  width: 100vw;
+  max-width: 100vw;
   max-height: 70vh;
   padding: 0rem 0;
   margin-left: auto;
