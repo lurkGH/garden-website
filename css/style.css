@@ -158,7 +158,7 @@ h2 {
   transition: background-color 0.3s;
 }
 .circle:hover {
-  filter: brightness(70%);
+  background-color: lightgray;
 }
 @media all and (min-width: 768px) {
   h1 {

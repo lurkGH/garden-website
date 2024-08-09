@@ -5,7 +5,7 @@ function changeImage() {
     let caption = document.getElementsByClassName("gallery-caption")[0];
     
     // Sets first thumbnail to appear "selected"
-    previousImage.style.filter = "brightness(50%)";
+    galleryImages[0].style.filter = "brightness(50%)";
     // Sets caption to first thumbnail's caption
     caption.innerHTML = galleryImages[0].alt;
 
@@ -30,6 +30,7 @@ function changeImage() {
 }
 
 function topOfPage() {
+    // Identical lines but for different browsers
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
