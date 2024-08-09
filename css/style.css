@@ -41,7 +41,7 @@ header ul {
   list-style: none;
 }
 header ul a:hover {
-  opacity: 70%;
+  filter: brightness(70%);
 }
 header img {
   gap: 0rem .5rem;
@@ -59,7 +59,7 @@ nav a {
   justify-content: flex-start;
 }
 nav a :hover {
-  opacity: 70%;
+  filter: brightness(70%);
 }
 .nav-logo {
   width: 100px;
@@ -143,7 +143,7 @@ h2 {
   transition: background-color 0.3s;
 }
 .arrow:hover {
-  opacity: 70%;
+  filter: brightness(70%);
 }
 .circles {
   display: flex;
@@ -158,7 +158,7 @@ h2 {
   transition: background-color 0.3s;
 }
 .circle:hover {
-  opacity: 70%;
+  filter: brightness(70%);
 }
 @media all and (min-width: 768px) {
   h1 {
@@ -208,7 +208,8 @@ footer ul {
 }
 
 /*****Photos*****/
-.gallery {
+.highlight-container {
+  position: relative;
   background-color: black;
   padding-top: 1rem;
 }
@@ -220,22 +221,36 @@ footer ul {
   margin-right: auto;
   background-color: black;
 }
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
 .thumbnails-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
-  gap: 1rem;
-  padding: 1rem .5rem 2.5rem .5rem
+  gap: 1rem .5rem;
+  padding: 1rem 0rem 2.5rem 0rem
 }
 .gallery-thumbnails {
-  width: 20vw;
+  width: 24vw;
   background-color: black;
 }
 .gallery-thumbnails:hover {
   cursor: pointer;
-  opacity: 70%;
+  filter: brightness(70%);
 }
 @media all and (min-width: 768px) {
   .gallery-thumbnails {
