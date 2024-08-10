@@ -2,20 +2,14 @@
 
 /*Overall*/
 * {
-  padding: 0;
-  margin: 0;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
 }
 html, body {
   overflow-x: hidden;
-  min-height: 100%;
 }
 body {
   background-color: floralwhite;
-  position: relative;
-  width: 100%;
-}
-.page-container {
   position: relative;
   min-height: 100vh;
 }
@@ -108,20 +102,20 @@ nav ul li a:visited {
   transition: background-image 1s linear;
 }
 .slideshow-container {
-  height: 60vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-h1 {
+.slideshow-container h1 {
   font-family: "Italianno";
   font-size: 4rem;
   color: white;
   text-align: center;
   text-shadow: 2px 2px black;
 }
-h2 {
+.slideshow-container h2 {
   font-family: "Fira Sans Extra Condensed";
   font-size: 1.5rem;
   color: gainsboro;
@@ -158,13 +152,16 @@ h2 {
   transition: background-color 0.3s;
 }
 .circle:hover {
-  background-color: lightgray;
+  filter: brightness(70%);
 }
 @media all and (min-width: 768px) {
-  h1 {
+  .slideshow-container {
+    height: 60vh;
+  }
+  .slideshow-container h1 {
     font-size: 8rem;
   }
-  h2 {
+  .slideshow-container h2 {
     font-size: 3rem;
   }
 }
@@ -224,8 +221,6 @@ footer ul {
 .gallery-caption {
   position: absolute;
   bottom: 0;
-  left: 0;
-  margin: 0;
   padding: 0.5rem 1rem;
   text-align: center;
   color: white;
@@ -233,7 +228,6 @@ footer ul {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1rem;
   width: 100%;
-  box-sizing: border-box;
 }
 .thumbnails-container {
   display: flex;
@@ -245,7 +239,7 @@ footer ul {
   padding: 1rem 0rem 2.5rem 0rem
 }
 .gallery-thumbnails {
-  width: 24vw;
+  width: 30vw;
   background-color: black;
 }
 .gallery-thumbnails:hover {
