@@ -6,7 +6,7 @@ class Photo {
 }
 
 function loadPhotos() {
-    fetch("../data/photos.json")
+    fetch("data/photos.json")
         .then(response => response.json())
         .then(data => {
             const photos = data.map(item => new Photo(item.source, item.caption));
