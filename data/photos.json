@@ -1,0 +1,30 @@
+[
+    {
+        "source": "./images/slideshow-1.webp",
+        "caption": "Central path through the garden"
+    },
+    {
+        "source": "./images/slideshow-2.webp",
+        "caption": "Zen Garden pond"
+    },
+    {
+        "source": "./images/slideshow-3.webp",
+        "caption": "Sakura Cafe seating area"
+    },
+    {
+        "source": "./images/gallery-1.webp",
+        "caption": "Riverview Bridge in the Ceremonial Garden"
+    },
+    {
+        "source": "./images/gallery-2.webp",
+        "caption": "Annual tulip display within the Concentric Garden"
+    },
+    {
+        "source": "./images/gallery-3.webp",
+        "caption": "Bonsai Trail in Zen Garden"
+    },
+    {
+        "source": "./images/gallery-4.webp",
+        "caption": "Annual Winter Festival Lights Show display"
+    }
+]

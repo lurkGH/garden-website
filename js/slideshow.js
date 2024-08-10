@@ -3,10 +3,10 @@ const slides = [
     "url(./images/slideshow-2.webp)",
     "url(./images/slideshow-3.webp)"
 ];
+const transitionDelay = 3000; // 1000 = 1 sec
+const resumeDelay = 5000;
 let currIndex = 0;
 let slideshowTimeout;
-let transitionDelay = 3000; // 1000 = 1 sec
-let resumeDelay = 5000;
 
 function preload(_slides, callback) {
     let loadedImagesCount = 0;

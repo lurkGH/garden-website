@@ -1,0 +1,94 @@
+/*****Home*****/
+
+/*Slideshow*/
+.slideshow {
+  background-image: url(../images/slideshow-1.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  border-style: solid;
+  border-width: 1px 0 1px 0;
+  border-color: lightslategray;
+  transition: background-image 1s linear;
+}
+.slideshow-container {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.slideshow-container h1 {
+  font-family: "Italianno";
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px black;
+}
+.slideshow-container h2 {
+  font-family: "Fira Sans Extra Condensed";
+  font-size: 1.5rem;
+  color: gainsboro;
+  text-align: center;
+  text-shadow: 2px 2px black;
+}
+.slideshow-indicators {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.arrow {
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  padding: 0 1rem;
+  transition: background-color 0.3s;
+}
+.arrow:hover {
+  filter: brightness(70%);
+}
+.circles {
+  display: flex;
+  gap: 1rem;
+}
+.circle {
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+.circle:hover {
+  filter: brightness(70%);
+}
+@media all and (min-width: 768px) {
+  .slideshow-container {
+    height: 60vh;
+  }
+  .slideshow-container h1 {
+    font-size: 8rem;
+  }
+  .slideshow-container h2 {
+    font-size: 3rem;
+  }
+}
+
+/*Article*/
+article {
+  background-color: floralwhite;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  width: 95%;
+  padding-bottom: 2rem;
+  margin: auto;
+}
+article h3 {
+  padding: .3rem;
+}
+article p {
+  padding-bottom: 1rem;
+}
