@@ -1,0 +1,99 @@
+body {
+    background-color: white;
+    background-image: url(../images/gallery-1.webp);
+}
+.memberships-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height: 70vh;
+    padding: 0 .5rem;
+}
+.membership-box {
+    background-color: oldlace;
+    text-align: center;
+    gap: 2rem;
+    border: 3px solid black;
+}
+.membership-features {
+    min-height: 20vh;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+h1 {
+    display: none;                      /*Temporary--need to figure out how this should be styled*/
+}
+h2 {
+    color: white;
+    background-color: sienna;
+    font-size: 1.5rem;
+    text-shadow: 4px 3px 3px black;
+    width: 100%;
+    padding-top: .2rem;
+}
+h3 {
+    color: white;
+    background-color: sienna;
+    font-size: 1.75rem;
+    text-shadow: 3px 2px 3px black;
+    width: 100%;
+}
+.membership-features a {
+    background: linear-gradient(180deg, sienna 50%, oldlace 50%);
+    display: block;
+    width: 100%;
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: .5rem 0 .5rem 0;
+}
+h4 {
+    background-color: white;
+    display: inline;
+    border-style: outset;
+    border-radius: 10%;
+    padding: .2rem .5rem;
+}
+h4:active {
+    border-style: inset;
+}
+p {
+    width: 90%;
+    padding: .1rem;
+    margin: auto;
+}
+@media all and (min-width: 992px) {
+    .memberships-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        min-height: 70vh;
+        gap: 2rem;
+        padding-top: 2rem;
+    }
+    .membership-box {
+        min-width: 25vw;
+    }
+    .membership-features {
+        min-height: 60vh;
+        width: 25vw;
+        justify-content: center;
+    }
+    h2 {
+        font-size: 2.5rem;
+        padding-top: .5rem;
+    }
+    h3 {
+        font-size: 4rem;
+    }
+    .membership-features a {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1.25rem;
+    }
+}

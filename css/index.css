@@ -1,5 +1,9 @@
 /*****Home*****/
 
+body {
+  background-color: floralwhite;
+}
+
 /*Slideshow*/
 .slideshow {
   background-image: url(../images/slideshow-1.webp);
@@ -7,9 +11,6 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  border-style: solid;
-  border-width: 1px 0 1px 0;
-  border-color: lightslategray;
   transition: background-image 1s linear;
 }
 .slideshow-container {
@@ -79,7 +80,6 @@
 
 /*Article*/
 article {
-  background-color: floralwhite;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   width: 95%;
