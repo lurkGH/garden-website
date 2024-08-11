@@ -35,7 +35,7 @@ function changeImage(photos) {
     // Sets first thumbnail to appear "selected"
     galleryImages[0].style.filter = "brightness(50%)";
     // Sets caption to first thumbnail's caption
-    caption.innerHTML = photos[0].caption;
+    caption.textContent = photos[0].caption;
 
     // Loops through each element, adding click event listener
     Array.from(galleryImages).forEach((item, index) => {
@@ -43,7 +43,7 @@ function changeImage(photos) {
             // Sets highlightImage source
             highlightImage.src = photos[index].source;
             // Sets caption
-            caption.innerHTML = photos[index].caption;
+            caption.textContent = photos[index].caption;
             // Prevents the change being applied to the same image clicked twice
             if (previousImage != galleryImages[index]) {
                 previousImage.style.filter = "brightness(100%)"

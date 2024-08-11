@@ -18,7 +18,7 @@ body {
 
 /*Header*/
 header {
-  background-color: rgb(21, 92, 21);
+  background-color: darkgreen;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(255,255,255,.2));
   border-style: solid;
   border-width: 0 0 1px 0;
@@ -63,6 +63,7 @@ nav a :hover {
 }
 nav ul {
   display: inline-flex;
+  flex-grow: 1;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: .3rem 1rem;
@@ -74,9 +75,14 @@ nav ul li a {
   font-size: 1.25rem;
   color: black;
   text-decoration: none;
+  border-width: 0; /*Hides border when inactive, without shifting elements*/
+  padding: 0 0.3rem;
 }
 nav ul li a:hover {
-  color: #765043;
+  border-style: solid;
+  border-color: tan;
+  background-color: tan;
+  border-radius: 10%;
 }
 nav ul li a:visited {
   color: black;
@@ -88,6 +94,7 @@ nav ul li a:visited {
   }
   nav ul li a {
     font-size: 1.5rem;
+    padding: 0.2rem 0.5rem;
   }
 }
 
@@ -96,7 +103,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: rgb(21, 92, 21);
+  background-color: darkgreen;
   background-image: linear-gradient(rgba(255,255,255,.2), rgba(0,0,0,0.3));
   border-style: solid;
   border-width: 1px 0 0px 0;

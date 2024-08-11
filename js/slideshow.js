@@ -29,14 +29,14 @@ function preload(_slides, callback) {
 function toggleTransition(applyTransition) {
     let slideshow = document.getElementsByClassName("slideshow")[0];
     let circles = document.getElementsByClassName("circle");
-    // Resets all circles to default white
+    // Resets all circles to default brightness
     for (let i = 0; i < circles.length; i++) {
-        circles[i].style.backgroundColor = "white";
+        circles[i].style.filter = "brightness(100%)";
     }
 
-    // Set the current circle to gray
+    // Shades the current circle darker
     if (circles[currIndex]) {
-        circles[currIndex].style.backgroundColor = "gray";
+        circles[currIndex].style.filter = "brightness(50%)";
     }
     // Toggles the transition effect based on the parameter
     slideshow.style.transition = applyTransition ? "background-image 1s linear" : "none";
