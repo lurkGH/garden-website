@@ -1,6 +1,10 @@
 body {
     background-color: white;
     background-image: url(../images/gallery-1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 .memberships-container {
     display: flex;
@@ -31,7 +35,7 @@ h2 {
     color: white;
     background-color: sienna;
     font-size: 1.5rem;
-    text-shadow: 4px 3px 3px black;
+    text-shadow: 3px 2px 3px black;
     width: 100%;
     padding-top: .2rem;
 }

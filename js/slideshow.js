@@ -31,13 +31,14 @@ function toggleTransition(applyTransition) {
     let circles = document.getElementsByClassName("circle");
     // Resets all circles to default brightness
     for (let i = 0; i < circles.length; i++) {
-        circles[i].style.filter = "brightness(100%)";
+        circles[i].style.backgroundColor = "white";
     }
 
     // Shades the current circle darker
     if (circles[currIndex]) {
-        circles[currIndex].style.filter = "brightness(50%)";
+        circles[currIndex].style.backgroundColor = "gray";
     }
+    
     // Toggles the transition effect based on the parameter
     slideshow.style.transition = applyTransition ? "background-image 1s linear" : "none";
     slideshow.style.backgroundImage = slides[currIndex];
