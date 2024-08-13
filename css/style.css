@@ -76,7 +76,7 @@ nav ul li a {
   text-decoration: none;
 }
 nav ul li a:hover {
-  text-decoration: underline sienna 7%;
+  text-decoration: underline black 6%;
   text-underline-offset: .25em;
 }
 nav ul li a:visited {

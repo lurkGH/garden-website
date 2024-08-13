@@ -12,13 +12,11 @@ body {
     justify-content: flex-start;
     align-items: stretch;
     min-height: 70vh;
-    padding: 0 .5rem;
 }
 .membership-box {
     background-color: oldlace;
     text-align: center;
-    gap: 2rem;
-    border: 3px solid black;
+    border: 1px solid black;
 }
 .membership-features {
     min-height: 20vh;
@@ -34,7 +32,7 @@ h1 {
 h2 {
     color: white;
     background-color: sienna;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-shadow: 3px 2px 3px black;
     width: 100%;
     padding-top: .2rem;
@@ -42,7 +40,7 @@ h2 {
 h3 {
     color: white;
     background-color: sienna;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     text-shadow: 3px 2px 3px black;
     width: 100%;
 }
@@ -67,8 +65,25 @@ h4:active {
 }
 p {
     width: 90%;
-    padding: .1rem;
     margin: auto;
+}
+@media all and (min-width: 480px) {
+    .memberships-container {
+        justify-content: space-evenly;
+    }
+    .membership-box {
+        gap: 2rem;
+        border: 3px solid black;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.75rem;
+    }
+    p {
+        padding: .1rem;
+    }
 }
 @media all and (min-width: 992px) {
     .memberships-container {
