@@ -7,7 +7,7 @@
         <title>Login</title>
         <!--CSS-->
         <link rel="stylesheet" href="./css/style.css">
-        <link rel="stylesheet" href="./css/login.css">
+        <link rel="stylesheet" href="./css/signup.css">
         <!--JS-->
         <script src="./js/loadComponents.js"></script>
     </head>
@@ -17,24 +17,24 @@
         <main>
             <section class="title">
                 <h1>Interested in becoming a member of Local Gardens?</h1>
-                <h2>Tell us about you!</h2>
+                <h2>Tell us about yourself!</h2>
                 <p>Our goal is to be so much more than just a destination &mdash; we want to build a <em>community</em></p>
             </section>
-            <form action="">
+            <form id="signup" action="">
                 <div class="input-container">
                     <label class="hidden-label" for="first-name">First Name</label>
-                    <input type="text" name="first-name" placeholder="Enter first name" required>
+                    <input type="text" id="first-name" name="first-name" placeholder="Enter first name">
                 </div>
                 <div class="input-container">
                     <label class="hidden-label" for="last-name">Last Name</label>
-                    <input type="text" name="last-name" placeholder="Enter last name" required>
+                    <input type="text" id="last-name" name="last-name" placeholder="Enter last name">
                 </div>
                 <div class="input-container">
                     <label class="hidden-label" for="email">Email Address</label>
-                    <input type="email" name="email" placeholder="Enter email" required>
+                    <input type="email" id="email" name="email" placeholder="Enter email">
                 </div>
                 <div class="input-container">
-                    <input type= "checkbox" name="terms" required>
+                    <input type= "checkbox" name="terms">
                     <label for="terms">I have read the terms and conditions</label>
                 </div>
                 <div class="input-container">
@@ -42,7 +42,7 @@
                     <label for="subscription">I would like to receive the monthly newsletter</label>
                 </div>
                 <div class="input-container">
-                    <button type="submit">Sign Up</button>
+                    <button type="submit" form="signup" value="submit">Sign Up</button>
                 </div>
             </form>
         </main>

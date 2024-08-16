@@ -42,7 +42,6 @@ body {
   }
   .gallery-thumbnails {
     width: 30vw;
-    background-color: black;
   }
   .gallery-thumbnails:hover {
     cursor: pointer;

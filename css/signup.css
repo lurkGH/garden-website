@@ -18,7 +18,7 @@ main {
     align-items: center;
     text-align: center;
     width: 85vw;
-    padding: .5rem 0;
+    padding: .5rem 0 0 0;
     border-top: 1rem solid maroon;
     margin: 0 auto;
 }
@@ -28,7 +28,7 @@ h1 {
 }
 h2 {
     width: 90%;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 p {
     width: 90%;
@@ -78,6 +78,9 @@ button {
     }
     .title {
         max-width: 70vw;
+    }
+    h2 {
+        font-size: 2rem;
     }
     form {
         max-width: 70vw;
