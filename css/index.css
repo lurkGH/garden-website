@@ -61,7 +61,7 @@ body {
   height: 1rem;
   background-color: white;
   border-radius: 50%;
-  transition: background-color 0.3s;
+  transition: background-color .5s;
 }
 .circle:hover {
   filter: brightness(70%);
@@ -78,17 +78,37 @@ body {
   }
 }
 
-/*Article*/
-article {
+/*Main*/
+main {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   width: 95%;
   padding-bottom: 2rem;
-  margin: auto;
+  margin: 0 auto 2rem auto;
 }
-article h3 {
-  padding: .3rem;
+main h3 {
+  padding: .5rem;
 }
-article p {
-  padding-bottom: 1rem;
+main h4 {
+  background-color: maroon;
+  color: white;
+  padding: .5rem;
+  margin: .5rem 0 .5rem 0;
+}
+main p {
+  line-height: 1.5rem;
+  padding: .5rem;
+}
+main ul {
+  padding: 0;
+  margin: 0;
+}
+main li {
+  list-style: square inside;
+  padding: .1rem 0;
+}
+main button {
+  padding: .5rem;
+  box-shadow: 1px 1px 2px;
+  margin: .5rem;
 }
