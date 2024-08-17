@@ -5,29 +5,29 @@ body {
 }
 
 /*Slideshow*/
-.slideshow {
+#slideshow {
   background-image: url(../images/slideshow-1.webp);
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center;
   transition: background-image 1s linear;
 }
-.slideshow-container {
+#slideshow-container {
   height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.slideshow-container h1 {
+#slideshow-container h1 {
   font-family: "Italianno";
   font-size: 4rem;
   color: white;
   text-align: center;
   text-shadow: 2px 2px black;
 }
-.slideshow-container h2 {
+#slideshow-container h2 {
   font-family: "Fira Sans Extra Condensed";
   font-size: 1.5rem;
   color: gainsboro;
@@ -67,13 +67,16 @@ body {
   filter: brightness(70%);
 }
 @media all and (min-width: 768px) {
-  .slideshow-container {
+  #slideshow {
+    background-attachment: fixed;
+  }
+  #slideshow-container {
     height: 60vh;
   }
-  .slideshow-container h1 {
+  #slideshow-container h1 {
     font-size: 8rem;
   }
-  .slideshow-container h2 {
+  #slideshow-container h2 {
     font-size: 3rem;
   }
 }
