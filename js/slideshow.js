@@ -27,7 +27,7 @@ function preload(_slides, callback) {
 }
 
 function toggleTransition(applyTransition) {
-    let slideshow = document.getElementsByClassName("slideshow")[0];
+    let slideshow = document.getElementById("slideshow");
     let circles = document.getElementsByClassName("circle");
     // Resets all circles to default brightness
     for (let i = 0; i < circles.length; i++) {
