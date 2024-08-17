@@ -7,18 +7,24 @@ class Photo {
 
 function loadPhotos() {
     fetch("data/photos.json")
-        .then(response => response.json())
-        .then(data => {
-            const photos = data.map(item => new Photo(item.source, item.caption));
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            const photos = data.map(function(item) {
+                return new Photo(item.source, item.caption);
+            });
             generateThumbnails(photos);
             changeImage(photos);
         })
-        .catch(error => console.error("Error loading photos: ", error));
+        .catch(function(error) {
+            console.error("Error loading photos: ", error);
+        });
 }
 
 function generateThumbnails(photos) {
     const container = document.querySelector(".thumbnails-container");
-    photos.forEach(photo => {
+    photos.forEach(function(photo) {
         const img = document.createElement("img");
         img.src = photo.source;
         img.className = "gallery-thumbnails";
@@ -38,18 +44,18 @@ function changeImage(photos) {
     caption.textContent = photos[0].caption;
 
     // Loops through each element, adding click event listener
-    Array.from(galleryImages).forEach((item, index) => {
+    Array.from(galleryImages).forEach(function(item, index) {
         item.addEventListener("click", function() {
             // Sets highlightImage source
             highlightImage.src = photos[index].source;
             // Sets caption
             caption.textContent = photos[index].caption;
             // Prevents the change being applied to the same image clicked twice
-            if (previousImage != galleryImages[index]) {
-                previousImage.style.filter = "brightness(100%)"
+            if (previousImage !== galleryImages[index]) {
+                previousImage.style.filter = "brightness(100%)";
             }
             // Adds filter over matching thumbnail image
-            galleryImages[index].style.filter = "brightness(50%)"
+            galleryImages[index].style.filter = "brightness(50%)";
             // Sets previousImage for resetting brightness when next image is clicked
             previousImage = galleryImages[index];
             topOfPage();
