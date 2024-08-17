@@ -23,7 +23,7 @@ function loadPhotos() {
 }
 
 function generateThumbnails(photos) {
-    const container = document.querySelector(".thumbnails-container");
+    const container = document.querySelector("#thumbnails-container");
     photos.forEach(function(photo) {
         const img = document.createElement("img");
         img.src = photo.source;
@@ -35,7 +35,7 @@ function generateThumbnails(photos) {
 function changeImage(photos) {
     const galleryImages = document.getElementsByClassName("gallery-thumbnails");
     const highlightImage = document.getElementById("gallery-highlight");
-    let caption = document.getElementsByClassName("gallery-caption")[0];
+    let caption = document.getElementById("gallery-caption");
     let previousImage = galleryImages[0];
     
     // Sets first thumbnail to appear "selected"

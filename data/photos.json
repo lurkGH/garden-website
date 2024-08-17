@@ -13,30 +13,38 @@
     },
     {
         "source": "./images/gallery-1.webp",
-        "caption": "Riverview Bridge in the Ceremonial Garden"
-    },
-    {
-        "source": "./images/gallery-2.webp",
-        "caption": "Annual tulip display within the Concentric Garden"
-    },
-    {
-        "source": "./images/gallery-3.webp",
         "caption": "Bonsai Trail in Zen Garden"
     },
     {
-        "source": "./images/gallery-4.webp",
-        "caption": "Annual Winter Festival Lights Show display"
-    },
-    {
-        "source": "./images/gallery-5.webp",
-        "caption": "Annual Winter Festival Lights Show display in Zen Garden"
-    },
-    {
-        "source": "./images/gallery-6.webp",
+        "source": "./images/gallery-2.webp",
         "caption": "Lewis-Moore Chapel in the Ceremonial Garden"
     },
     {
-        "source": "./images/gallery-7.webp",
+        "source": "./images/gallery-3.webp",
+        "caption": "Riverview Bridge in the Ceremonial Garden"
+    },
+    {
+        "source": "./images/gallery-4.webp",
+        "caption": "Hidden Garden"
+    },
+    {
+        "source": "./images/gallery-5.webp",
+        "caption": "Annual tulip display within the Concentric Garden"
+    },
+    {
+        "source": "./images/gallery-6.webp",
         "caption": "Stillwater Meadow Vista"
+    },
+    {
+        "source": "./images/gallery-7.webp",
+        "caption": "Entry Drive during Annual Winter Festival Lights Show"
+    },
+    {
+        "source": "./images/gallery-8.webp",
+        "caption": "Annual Winter Festival Lights Show display on central path"
+    },
+    {
+        "source": "./images/gallery-9.webp",
+        "caption": "Annual Winter Festival Lights Show display in Zen Garden"
     }
 ]
