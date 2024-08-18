@@ -41,10 +41,8 @@ section p {
 }
 @media all and (min-width: 768px) {
     section h2 {
-        float:right;
+        float: right;
         width: 48%;
-        margin-left: auto;
-        margin-right: auto;
     }
     section img {
         width: 50%;
@@ -54,15 +52,18 @@ section p {
         clear: none;
         float: right;
         width: 48%;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 @media all and (min-width: 992px) {
     section h2 {
-        font-size: 2rem;
+        width: 68%;
+        font-size: 1.5rem;
+    }
+    section img {
+        width: 30%;
     }
     section p {
-        font-size: 1.5rem;
+        width: 68%;
+        font-size: 1.1rem;
     }
 }
