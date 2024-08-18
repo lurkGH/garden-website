@@ -1,0 +1,68 @@
+body {
+    background-image: url(../images/gallery-2.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+main {
+    padding: .5rem 0 2rem 0;
+}
+section {
+    background-color: oldlace;
+    overflow: auto;
+    width: 90%;
+    height: auto;
+    padding: .5rem;
+    border-radius: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+section h2 {
+    background-color: maroon;
+    color: white;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: .3rem;
+    border-radius: 3%;
+    margin-bottom: .5rem;
+}
+section img {
+    float: left;
+    width: 100%;
+    height: auto;
+    border-radius: 3%;
+}
+section p {
+    clear: both;
+    font-size: 1rem;
+    padding: .3rem;
+}
+@media all and (min-width: 768px) {
+    section h2 {
+        float:right;
+        width: 48%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    section img {
+        width: 50%;
+        float: left;
+    }
+    section p {
+        clear: none;
+        float: right;
+        width: 48%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media all and (min-width: 992px) {
+    section h2 {
+        font-size: 2rem;
+    }
+    section p {
+        font-size: 1.5rem;
+    }
+}
