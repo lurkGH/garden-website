@@ -8,7 +8,7 @@ body {
 #calendar-container {
     background-color: red;
     display: grid;
-    grid-template: 5vh 5vh repeat(5, 10vh) / repeat(7, 1fr);
+    grid-template: 5vh 5vh repeat(5, 10vh) / 1fr repeat(5, 1fr) 1fr;
     width: 99%;
     margin-left: auto;
     margin-right: auto;
@@ -20,8 +20,22 @@ body {
     border: solid 1px black;
     overflow: hidden;
 }
+#left-arrow {
+    background-color: maroon;
+    grid-column: 1 / 2;
+    text-align: center;
+    align-content: center;
+    cursor: pointer;
+}
+#right-arrow {
+    background-color: maroon;
+    grid-column: 7 / 8;
+    text-align: center;
+    align-content: center;
+    cursor: pointer;
+}
 #month-year-row {
-    grid-column: 1 / -1;
+    grid-column: 2 / 7;
     background-color: maroon;
     color: white;
     font-size: 1.1rem;

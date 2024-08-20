@@ -1,21 +1,40 @@
 const calendar = document.getElementById("calendar-container");
 
-function populateCalendar() {
+function populateCalendar(change) {
     const date = new Date();
     let year = date.getFullYear();
     let month = date.getMonth();
+
+    // If month is changed by user, updates variables
+    if (month === 0 && change === -1) {
+        month = 11;
+        year -= 1;
+    } else if (month === 11 && change === 1) {
+        month = 0;
+        year += 1;
+    } else {
+        month += change;
+    }
+
     let totalDays = new Date(year, month + 1, 0).getDate();
     let unusedDaysBefore = new Date(year, month, 1).getDay();
     let unusedDaysAfter = (35 - totalDays - unusedDaysBefore);
 
-    // 
+    // Clears calendar for changing months
+    calendar.innerHTML = "";
+
+    // Accounts for months in which calendar extends another row
     if (unusedDaysBefore > 4) {
         calendar.style.gridTemplate = "5vh 5vh repeat(6, 10vh) / repeat(7, 1fr)";
         unusedDaysAfter = (42 - totalDays - unusedDaysBefore)
     }
 
+    // Adds first row elements
+    calendar.innerHTML += "<div class='item arrow' id='left-arrow'>⮘</div>";
+    calendar.innerHTML += "<div class='item' id='month-year-row'></div>";
+    calendar.innerHTML += "<div class='item arrow' id='right-arrow'>⮚</div>";
+
     // Sets the date and year in the top row
-    calendar.innerHTML += "<div class='item' id='month-year-row'></div>"
     let firstRow = document.getElementById("month-year-row");
     switch(month) {
         case 0:
@@ -57,7 +76,6 @@ function populateCalendar() {
         default:
             break;
     }
-
 
     // Sets up the weekday row
     for (let i = 0; i < 7; i++) {
@@ -117,4 +135,4 @@ function addEvents() {
     dateCell[23].innerHTML += "<p class='event'>10:00 a.m. Wedding</p>"; // hard-coded
 }
 
-document.addEventListener("DOMContentLoaded", populateCalendar());
+document.addEventListener("DOMContentLoaded", populateCalendar(0));
