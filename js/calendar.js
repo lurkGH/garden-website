@@ -1,37 +1,85 @@
 const calendar = document.getElementById("calendar-container");
 
 function populateCalendar() {
-    // Gets number of days in month based on first day of next month
-    const totalDays = new Date("2024-09-01").getDate();
-    // Gets number of unused days at the start of the calendar
-    const unusedDaysBefore = new Date("2024-08-01").getDay() + 1;
-    const unusedDaysAfter = (35 - totalDays - unusedDaysBefore);
-   
-    calendar.innerHTML += "<div class='item' id='month-year-row'></div>"
-    let topRow = document.getElementById("month-year-row");
-    topRow.innerHTML = "August 2024"
+    const date = new Date();
+    let year = date.getFullYear();
+    let month = date.getMonth();
+    let totalDays = new Date(year, month + 1, 0).getDate();
+    let unusedDaysBefore = new Date(year, month, 1).getDay();
+    let unusedDaysAfter = (35 - totalDays - unusedDaysBefore);
 
-    // Sets up weekday row
+    // 
+    if (unusedDaysBefore > 4) {
+        calendar.style.gridTemplate = "5vh 5vh repeat(6, 10vh) / repeat(7, 1fr)";
+        unusedDaysAfter = (42 - totalDays - unusedDaysBefore)
+    }
+
+    // Sets the date and year in the top row
+    calendar.innerHTML += "<div class='item' id='month-year-row'></div>"
+    let firstRow = document.getElementById("month-year-row");
+    switch(month) {
+        case 0:
+            firstRow.innerHTML = "January " + year;
+            break;
+        case 1:
+            firstRow.innerHTML = "February " + year;
+            break;
+        case 2:
+            firstRow.innerHTML = "March " + year;
+            break;
+        case 3:
+            firstRow.innerHTML = "April " + year;
+            break;
+        case 4:
+            firstRow.innerHTML = "May " + year;
+            break;
+        case 5:
+            firstRow.innerHTML = "June " + year;
+            break;
+        case 6:
+            firstRow.innerHTML = "July " + year;
+            break;
+        case 7:
+            firstRow.innerHTML = "August " + year;
+            break;
+        case 8:
+            firstRow.innerHTML = "September " + year;
+            break;
+        case 9:
+            firstRow.innerHTML = "October " + year;
+            break;
+        case 10:
+            firstRow.innerHTML = "November " + year;
+            break;
+        case 11:
+            firstRow.innerHTML = "December " + year;
+            break;
+        default:
+            break;
+    }
+
+
+    // Sets up the weekday row
     for (let i = 0; i < 7; i++) {
         calendar.innerHTML += "<div class='item first-row'></div>";
-        let firstRow = document.getElementsByClassName("first-row");
+        let secRow = document.getElementsByClassName("first-row");
         switch(i) {
             case 0:
             case 6:
-                firstRow[i].innerHTML = "S";
+                secRow[i].innerHTML = "S";
                 break;
             case 1:
-                firstRow[i].innerHTML = "M";
+                secRow[i].innerHTML = "M";
                 break;
             case 2:
             case 4:
-                firstRow[i].innerHTML = "T";
+                secRow[i].innerHTML = "T";
                 break;
             case 3:
-                firstRow[i].innerHTML = "W";
+                secRow[i].innerHTML = "W";
                 break;
             case 5:
-                firstRow[i].innerHTML = "F";
+                secRow[i].innerHTML = "F";
                 break;
             default:
                 break;
@@ -40,12 +88,12 @@ function populateCalendar() {
 
     addUnusedDays(unusedDaysBefore);
 
+    // Sets up the rows for the dates
     for (let i = 1; i <= totalDays; i++) {
-        let date = new Date().getDate();
         calendar.innerHTML += "<div class='item'></div>";
-        let day = document.getElementsByClassName("item")[i + 7 + unusedDaysBefore];
-        day.innerHTML += "<p class='date'>" + i + "</p>"
-        if (date === i) {
+        let dayCell = document.getElementsByClassName("item")[i + 7 + unusedDaysBefore];
+        dayCell.innerHTML += "<p class='date'>" + i + "</p>"
+        if (date.getDate() === i) {
             let currDay = document.getElementsByClassName("date")[i - 1];
             currDay.classList.add("current-date");
         }
@@ -54,7 +102,7 @@ function populateCalendar() {
     if (unusedDaysAfter > 0) {
         addUnusedDays(unusedDaysAfter);
     }
-    
+
     addEvents();
 }
 

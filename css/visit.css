@@ -17,7 +17,7 @@ main {
     border-radius: 2%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1rem;
+    margin-bottom: .6rem;
 }
 #intro-section h1 {
     background-color: maroon;
@@ -25,6 +25,7 @@ main {
     font-size: 1.25rem;
     text-align: center;
     padding: .3rem;
+    border-radius: .3em;
     margin-bottom: .5rem;
 }
 #intro-section img {
@@ -42,11 +43,11 @@ section {
     overflow: auto;
     width: 90%;
     height: auto;
-    padding: .5rem;
+    padding: .5rem .5rem .8rem .5rem;
     border-radius: 2%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1rem;
+    margin-bottom: .6rem;
 }
 section h2 {
     background-color: maroon;
@@ -54,6 +55,7 @@ section h2 {
     font-size: 1.25rem;
     text-align: center;
     padding: .3rem;
+    border-radius: .3em;
     margin-bottom: .5rem;
 }
 section img {
