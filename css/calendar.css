@@ -1,0 +1,52 @@
+body {
+    background-image: url(../images/gallery-4.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+#calendar-container {
+    background-color: red;
+    display: grid;
+    grid-template: 5vh repeat(5, 10vh) / repeat(7, 1fr);
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    transform: translateY(10%);
+}
+.item {
+    background-color: white;
+    border: solid 1px black;
+    overflow: hidden;
+}
+.first-row {
+    background-color: maroon;
+    color: white;
+    text-align: center;
+    align-content: center;
+}
+.unused {
+    background-color: silver;
+}
+.current-date {
+    background-color: maroon;
+    color: white;
+}
+.date {
+    padding-left: .2rem;
+}
+.event {
+    background-color: oldlace;
+    font-size: .8rem;
+    padding: 0 .1rem;
+    border-radius: 15%;
+}
+@media all and (min-width: 768px) {
+    #calendar-container {
+        grid-template: 5vh repeat(5, 13vh) / repeat(7, 1fr);
+    }
+    .event {
+        font-size: 1rem;
+    }
+}
