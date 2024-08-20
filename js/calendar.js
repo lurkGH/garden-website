@@ -1,42 +1,60 @@
 const calendar = document.getElementById("calendar-container");
 
 function populateCalendar() {
-    let date = new Date();
+    // Gets number of days in month based on first day of next month
+    const totalDays = new Date("2024-09-01").getDate();
+    // Gets number of unused days at the start of the calendar
+    const unusedDaysBefore = new Date("2024-08-01").getDay() + 1;
+    const unusedDaysAfter = (35 - totalDays - unusedDaysBefore);
+   
+    calendar.innerHTML += "<div class='item' id='month-year-row'></div>"
+    let topRow = document.getElementById("month-year-row");
+    topRow.innerHTML = "August 2024"
 
+    // Sets up weekday row
     for (let i = 0; i < 7; i++) {
+        calendar.innerHTML += "<div class='item first-row'></div>";
+        let firstRow = document.getElementsByClassName("first-row");
         switch(i) {
             case 0:
             case 6:
-                calendar.innerHTML += "<div class='item first-row'>S</div>";
+                firstRow[i].innerHTML = "S";
                 break;
             case 1:
-                calendar.innerHTML += "<div class='item first-row'>M</div>";
+                firstRow[i].innerHTML = "M";
                 break;
             case 2:
             case 4:
-                calendar.innerHTML += "<div class='item first-row'>T</div>";
+                firstRow[i].innerHTML = "T";
                 break;
             case 3:
-                calendar.innerHTML += "<div class='item first-row'>W</div>";
+                firstRow[i].innerHTML = "W";
                 break;
             case 5:
-                calendar.innerHTML += "<div class='item first-row'>F</div>";
+                firstRow[i].innerHTML = "F";
                 break;
             default:
                 break;
         }
     }
-    addUnusedDays(2);
-    for (let i = 0; i < 31; i++) {
+
+    addUnusedDays(unusedDaysBefore);
+
+    for (let i = 1; i <= totalDays; i++) {
+        let date = new Date().getDate();
         calendar.innerHTML += "<div class='item'></div>";
-        let day = document.getElementsByClassName("item")[i + 9]; // hard-coded, change later
-        day.innerHTML += "<p class='date'>" + (i + 1) + "</p>"
-        if (date.getDate() === (i + 1)) {
-            let currDay = document.getElementsByClassName("date")[i];
+        let day = document.getElementsByClassName("item")[i + 7 + unusedDaysBefore];
+        day.innerHTML += "<p class='date'>" + i + "</p>"
+        if (date === i) {
+            let currDay = document.getElementsByClassName("date")[i - 1];
             currDay.classList.add("current-date");
         }
     }
-    addUnusedDays(2);
+
+    if (unusedDaysAfter > 0) {
+        addUnusedDays(unusedDaysAfter);
+    }
+    
     addEvents();
 }
 

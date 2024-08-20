@@ -8,17 +8,28 @@ body {
 #calendar-container {
     background-color: red;
     display: grid;
-    grid-template: 5vh repeat(5, 10vh) / repeat(7, 1fr);
+    grid-template: 5vh 5vh repeat(5, 10vh) / repeat(7, 1fr);
     width: 99%;
     margin-left: auto;
     margin-right: auto;
     top: 50%;
-    transform: translateY(10%);
+    transform: translateY(5%);
 }
 .item {
     background-color: white;
     border: solid 1px black;
     overflow: hidden;
+}
+#month-year-row {
+    grid-column: 1 / -1;
+    background-color: maroon;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 .first-row {
     background-color: maroon;
@@ -44,7 +55,7 @@ body {
 }
 @media all and (min-width: 768px) {
     #calendar-container {
-        grid-template: 5vh repeat(5, 13vh) / repeat(7, 1fr);
+        grid-template: 5vh 5vh repeat(5, 13vh) / repeat(7, 1fr);
     }
     .event {
         font-size: 1rem;
