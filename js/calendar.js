@@ -109,7 +109,7 @@ function populateCalendar(change) {
     // Sets up the rows for the dates
     for (let i = 1; i <= totalDays; i++) {
         calendar.innerHTML += "<div class='item'></div>";
-        let dayCell = document.getElementsByClassName("item")[i + 7 + unusedDaysBefore];
+        let dayCell = document.getElementsByClassName("item")[i + 9 + unusedDaysBefore];
         dayCell.innerHTML += "<p class='date'>" + i + "</p>"
         if (date.getDate() === i) {
             let currDay = document.getElementsByClassName("date")[i - 1];
