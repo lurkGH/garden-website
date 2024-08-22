@@ -25,7 +25,7 @@ function populateCalendar(change) {
     calendar.style.gridTemplate = "5vh 5vh repeat(5, 10vh) / repeat(7, 1fr)";
 
     // If the month requires an additional row, updates gridTemplate
-    if (unusedDaysBefore > 4 || (unusedDaysBefore + totalDays) > 35) {
+    if (unusedDaysBefore + totalDays > 35) {
         calendar.style.gridTemplate = "5vh 5vh repeat(6, 10vh) / repeat(7, 1fr)";
         unusedDaysAfter = (42 - totalDays - unusedDaysBefore);
     }
