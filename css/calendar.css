@@ -6,7 +6,7 @@ body {
     background-position: center;
 }
 #calendar-container {
-    background-color: red;
+    background-color: white;
     display: grid;
     grid-template: 5vh 5vh repeat(5, 10vh) / 1fr repeat(5, 1fr) 1fr;
     width: 99%;
@@ -22,14 +22,18 @@ body {
 }
 #left-arrow {
     background-color: maroon;
+    color: white;
     grid-column: 1 / 2;
+    font-weight: bold;
     text-align: center;
     align-content: center;
     cursor: pointer;
 }
 #right-arrow {
     background-color: maroon;
+    color: white;
     grid-column: 7 / 8;
+    font-weight: bold;
     text-align: center;
     align-content: center;
     cursor: pointer;
@@ -48,6 +52,7 @@ body {
 .first-row {
     background-color: maroon;
     color: white;
+    font-weight: bold;
     text-align: center;
     align-content: center;
 }
