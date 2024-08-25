@@ -5,83 +5,125 @@ class Event {
     }
 }
 
-const calendar = document.getElementById("calendar-container");
-let currentYear = new Date().getFullYear();
-let currentMonth = new Date().getMonth();
+const calendarContainer = document.getElementById("calendar-container");
+const date = new Date();
+let year = date.getFullYear();
+let month = date.getMonth() + 1;
 
-function populateCalendar(change) {
-    // Updates the global month and year based on the change
-    if (currentMonth === 0 && change === -1) {
-        currentMonth = 11;
-        currentYear--;
-    } else if (currentMonth === 11 && change === 1) {
-        currentMonth = 0;
-        currentYear++;
+function setupCalendar(change) {
+    // Updates year and month based on change from arrow clicks
+    if (month === 1 && change === -1) {
+        month = 12;
+        year--;
+    } else if (month === 12 && change === 1) {
+        month = 1;
+        year++;
     } else {
-        currentMonth += change;
+        month += change;
     }
 
-    let totalDays = new Date(currentYear, currentMonth + 1, 0).getDate();
-    let unusedDaysBefore = new Date(currentYear, currentMonth, 1).getDay();
-    let unusedDaysAfter = (35 - totalDays - unusedDaysBefore);
-
-    // Clears the calendar for changing months
-    calendar.innerHTML = "";
-
-    // Resets gridTemplate to its default state
-    calendar.style.gridTemplate = "5vh 5vh repeat(5, 10vh) / repeat(7, 1fr)";
-
-    // If the month requires an additional row, updates gridTemplate
-    if (unusedDaysBefore + totalDays > 35) {
-        calendar.style.gridTemplate = "5vh 5vh repeat(6, 10vh) / repeat(7, 1fr)";
-        unusedDaysAfter = (42 - totalDays - unusedDaysBefore);
-    }
-
-    // Adds first row elements
-    calendar.innerHTML += "<div class='item arrow' id='left-arrow'>⮘</div>";
-    calendar.innerHTML += "<div class='item' id='month-year-row'></div>";
-    calendar.innerHTML += "<div class='item arrow' id='right-arrow'>⮚</div>";
-
-    // Sets the date and year in the top row
-    let firstRow = document.getElementById("month-year-row");
-    const monthNames = ["January", "February", "March", "April", "May", "June", 
-                        "July", "August", "September", "October", "November", "December"];
-    firstRow.innerHTML = monthNames[currentMonth] + " " + currentYear;
-
-    // Sets up the weekday row
-    const weekdays = ["S", "M", "T", "W", "T", "F", "S"];
-    for (let i = 0; i < 7; i++) {
-        calendar.innerHTML += `<div class='item first-row'>${weekdays[i]}</div>`;
-    }
-
-    addUnusedDays(unusedDaysBefore);
-
-    // Sets up the rows for the dates
-    for (let i = 1; i <= totalDays; i++) {
-        let dayID = currentYear + "-" + (currentMonth + 1) + "-" + i;
-        calendar.innerHTML += `<div class='item' id='${dayID}'></div>`;
-        let dayCell = document.getElementsByClassName("item")[i + 9 + unusedDaysBefore];
-        dayCell.innerHTML += `<p class='date'>${i}</p>`;
-        if (new Date().getFullYear() === currentYear && new Date().getMonth() === currentMonth && new Date().getDate() === i) {
-            let currDay = document.getElementsByClassName("date")[i - 1];
-            currDay.classList.add("current-date");
-        }
-    }
-
-    if (unusedDaysAfter > 0) {
-        addUnusedDays(unusedDaysAfter);
-    }
-
+    calendarContainer.innerHTML = "";
+    setupTheme();
+    setupMonthYearRow();
+    setupWeekdayRow();
+    loadDays();
+    loadCurrentDay();
     addEvents();
-
-    // Adds event listeners to the arrow buttons
-    document.getElementById("left-arrow").addEventListener("click", () => populateCalendar(-1));
-    document.getElementById("right-arrow").addEventListener("click", () => populateCalendar(1));
+    addEventListeners();
 }
 
-function addUnusedDays(amount) {
-    for (let i = 0; i < amount; i++) {
-        calendar.innerHTML += "<div class='item unused'></div>";
+function setupTheme() {
+    switch(month) {
+        case 1:
+            document.body.style.backgroundImage = "linear-gradient(to right, #B0E0E6, #FFFFFF)";
+            break;
+        case 2:
+            document.body.style.backgroundImage = "linear-gradient(to right, #9966CC, #FFB6C1)";
+            break;
+        case 3:
+            document.body.style.backgroundImage = "linear-gradient(to right, #00FF7F, #B0E0E6)";
+            break;
+        case 4:
+            document.body.style.backgroundImage = "linear-gradient(to right, #FFB6C1, #FFD700)";
+            break;
+        case 5:
+            document.body.style.backgroundImage = "linear-gradient(to right, #50C878, #FFD700)";
+            break;
+        case 6:
+            document.body.style.backgroundImage = "linear-gradient(to right, #FFD700, #FF8C00)";
+            break;
+        case 7:
+            document.body.style.backgroundImage = "linear-gradient(to right, #FF4500, #FFD700)";
+            break;
+        case 8:
+            document.body.style.backgroundImage = "linear-gradient(to right, #FF8C00, #DAA520)";
+            break;
+        case 9:
+            document.body.style.backgroundImage = "linear-gradient(to right, #6B8E23, #FFD700)";
+            break;
+        case 10:
+            document.body.style.backgroundImage = "linear-gradient(to right, #FF7518, #FFD700)";
+            break;
+        case 11:
+            document.body.style.backgroundImage = "linear-gradient(to right, #D2691E, #CD5C5C)";
+            break;
+        case 12:
+            document.body.style.backgroundImage = "linear-gradient(to right, #F08080, #FFFFFF)";
+            break;
+        default:
+            break;
+    }
+}
+
+function setupMonthYearRow() {
+    const monthNames = ["January", "February", "March", "April", "May", "June", 
+        "July", "August", "September", "October", "November", "December"];
+    calendarContainer.innerHTML += "<div class='month-row' id='left-arrow'>⮘</div>";
+    calendarContainer.innerHTML += `<div class='month-row' id='month-year-name'>${monthNames[month - 1]} ${year}</div>`;
+    calendarContainer.innerHTML += "<div class='month-row' id='right-arrow'>⮚</div>";
+}
+
+function setupWeekdayRow() {
+    const weekdays = ["S", "M", "T", "W", "T", "F", "S"];
+    for (let i = 0; i < 7; i++) {
+        calendarContainer.innerHTML += `<div class="week-row">${weekdays[i]}</div>`
+    }
+}
+
+function loadDays() {
+    let totalDays = new Date(year, month, 0).getDate();
+    let leadingDays = new Date(year, month - 1, 1).getDay();
+    let trailingDays = (35 - totalDays - leadingDays);
+    let finalDay = new Date(year, month - 1, 0).getDate() - leadingDays;
+
+    // Sets up previous month's carryover days
+    for (let i = 0; i < leadingDays; i++) {
+        finalDay++
+        calendarContainer.innerHTML += `<div class='date-box'><div class='overflow-date'>${finalDay}</div></div>`;
+    }
+    // Sets up current month's days
+    for (let i = 1; i <= totalDays; i++) {
+        let dateID = year + "-" + month + "-" + i;
+        calendarContainer.innerHTML += `<div class='date-box'><div class='date' id='${dateID}'>${i}</div></div>`;
+    }
+    // Checks if month requires extra row
+    if (totalDays + leadingDays > 35) {
+        trailingDays = (42 - totalDays - leadingDays);
+    }
+    // Sets up next month's carryover days
+    for (let i = 0; i < trailingDays; i++) {
+        calendarContainer.innerHTML += `<div class='date-box'><div class='overflow-date'>${i + 1}</div></div>`;
+    }    
+}
+
+function loadCurrentDay() {
+    let currYear = new Date().getFullYear();
+    let currMonth = new Date().getMonth() + 1;
+    let currDay = new Date().getDate();
+    let dateID = currYear + "-" + currMonth + "-" + currDay;
+    let calendarDate = document.getElementById(dateID);
+    if (calendarDate) {
+        calendarDate.id = "current-day";
     }
 }
 
@@ -94,9 +136,7 @@ function addEvents() {
         const events = data.map(function(item) {
             return new Event(item.eventDate, item.eventDetails);
         });
-        // Loops through the events and add the event details to the matching date cells
         events.forEach(function(event) {
-            // Finds the element with the ID that matches the eventDate
             let eventCell = document.getElementById(event.eventDate);
             if (eventCell) {
                 eventCell.innerHTML += `<div class='event-details'>${event.eventDetails}</div>`;
@@ -105,4 +145,9 @@ function addEvents() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => populateCalendar(0));
+function addEventListeners() {
+    document.getElementById("left-arrow").addEventListener("click", () => setupCalendar(-1));
+    document.getElementById("right-arrow").addEventListener("click", () => setupCalendar(1));
+}
+
+document.addEventListener("DOMContentLoaded", () => setupCalendar(0));

@@ -1,84 +1,51 @@
-body {
-    background-image: url(../images/gallery-4.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
 #calendar-container {
-    background-color: white;
+    height: 55vh;
     display: grid;
-    grid-template: 5vh 5vh repeat(5, 10vh) / 1fr repeat(5, 1fr) 1fr;
-    margin-left: auto;
-    margin-right: auto;
-    top: 50%;
-    transform: translateY(5%);
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    text-align: center;
+    padding-top: 1rem;
 }
-.item {
-    background-color: white;
+.date-box {
+    justify-self: center stretch;
     overflow: hidden;
-    border: solid 1px black;
+}
+.month-row {
+    font-weight: bold;
 }
 #left-arrow {
-    background-color: maroon;
-    color: white;
     grid-column: 1 / 2;
-    font-weight: bold;
-    text-align: center;
-    align-content: center;
     cursor: pointer;
+}
+#month-year-name {
+    font-size: 1.2rem;
+    grid-column: 2 / 7;
 }
 #right-arrow {
-    background-color: maroon;
-    color: white;
     grid-column: 7 / 8;
-    font-weight: bold;
-    text-align: center;
-    align-content: center;
     cursor: pointer;
 }
-#month-year-row {
-    grid-column: 2 / 7;
-    background-color: maroon;
-    color: white;
-    font-size: 1.1rem;
+.week-row {
     font-weight: bold;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-.first-row {
-    background-color: maroon;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    align-content: center;
-}
-.unused {
-    background-color: silver;
-}
-.current-date {
-    background-color: maroon;
-    color: white;
 }
 .date {
-    padding-left: .1rem;
+    color: black;
+    font-weight: bold;
+}
+.overflow-date {
+    opacity: 30%;
 }
 .event {
-    background-color: oldlace;
-    font-size: .8rem;
-    padding: 0 .1rem;
-    border-radius: 15%;
+    font-size: .75rem;
 }
 .event-details {
-    padding: 0 .1rem .1rem .1rem;
+    font-size: .7rem;
 }
-@media all and (min-width: 768px) {
-    #calendar-container {
-        grid-template: 5vh 5vh repeat(5, 13vh) / repeat(7, 1fr);
-    }
-    .event {
-        font-size: 1rem;
-    }
+#current-day {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    width: fit-content;
+    padding: 0 .4rem .2rem .4rem;
+    margin-left: auto;
+    margin-right: auto;
 }
