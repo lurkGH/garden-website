@@ -1,3 +1,10 @@
+class Event {
+    constructor(eventDate, eventDetails) {
+        this.eventDate = eventDate;
+        this.eventDetails = eventDetails;
+    }
+}
+
 const calendar = document.getElementById("calendar-container");
 let currentYear = new Date().getFullYear();
 let currentMonth = new Date().getMonth();
@@ -51,7 +58,8 @@ function populateCalendar(change) {
 
     // Sets up the rows for the dates
     for (let i = 1; i <= totalDays; i++) {
-        calendar.innerHTML += "<div class='item'></div>";
+        let dayID = currentYear + "-" + (currentMonth + 1) + "-" + i;
+        calendar.innerHTML += `<div class='item' id='${dayID}'></div>`;
         let dayCell = document.getElementsByClassName("item")[i + 9 + unusedDaysBefore];
         dayCell.innerHTML += `<p class='date'>${i}</p>`;
         if (new Date().getFullYear() === currentYear && new Date().getMonth() === currentMonth && new Date().getDate() === i) {
@@ -64,7 +72,7 @@ function populateCalendar(change) {
         addUnusedDays(unusedDaysAfter);
     }
 
-    // addEvents(); --temporarily removed until implementation is finalized
+    addEvents();
 
     // Adds event listeners to the arrow buttons
     document.getElementById("left-arrow").addEventListener("click", () => populateCalendar(-1));
@@ -78,8 +86,23 @@ function addUnusedDays(amount) {
 }
 
 function addEvents() {
-    let dateCell = document.getElementsByClassName("item");
-    dateCell[23].innerHTML += "<p class='event'>10:00 a.m. Wedding</p>"; // hard-coded event
+    fetch("data/events.json")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        const events = data.map(function(item) {
+            return new Event(item.eventDate, item.eventDetails);
+        });
+        // Loops through the events and add the event details to the matching date cells
+        events.forEach(function(event) {
+            // Finds the element with the ID that matches the eventDate
+            let eventCell = document.getElementById(event.eventDate);
+            if (eventCell) {
+                eventCell.innerHTML += `<div class='event-details'>${event.eventDetails}</div>`;
+            }
+        });
+    });
 }
 
 document.addEventListener("DOMContentLoaded", () => populateCalendar(0));

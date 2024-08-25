@@ -9,7 +9,6 @@ body {
     background-color: white;
     display: grid;
     grid-template: 5vh 5vh repeat(5, 10vh) / 1fr repeat(5, 1fr) 1fr;
-    width: 99%;
     margin-left: auto;
     margin-right: auto;
     top: 50%;
@@ -17,8 +16,8 @@ body {
 }
 .item {
     background-color: white;
-    border: solid 1px black;
     overflow: hidden;
+    border: solid 1px black;
 }
 #left-arrow {
     background-color: maroon;
@@ -64,13 +63,16 @@ body {
     color: white;
 }
 .date {
-    padding-left: .2rem;
+    padding-left: .1rem;
 }
 .event {
     background-color: oldlace;
     font-size: .8rem;
     padding: 0 .1rem;
     border-radius: 15%;
+}
+.event-details {
+    padding: 0 .1rem .1rem .1rem;
 }
 @media all and (min-width: 768px) {
     #calendar-container {
