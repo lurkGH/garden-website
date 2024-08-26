@@ -7,6 +7,7 @@ class Event {
 }
 
 const calendarContainer = document.getElementById("calendar-container");
+const detailsWindow = document.getElementById("details-container");
 const date = new Date();
 let year = date.getFullYear();
 let month = date.getMonth() + 1;
@@ -23,7 +24,11 @@ function setupCalendar(change) {
         month += change;
     }
 
+    // Clear Calendar upon changing months
     calendarContainer.innerHTML = "";
+    detailsWindow.innerHTML = "";
+
+    // Setup functions
     setupTheme();
     setupMonthYearRow();
     setupWeekdayRow();
@@ -160,20 +165,19 @@ function addEvents() {
                     eventDetails.className = "event-details";
                     parentCell.appendChild(eventDetails);
                 }
-                eventDetails.innerHTML += `${event.eventDetails}<br/>`;
+                eventDetails.innerHTML += `\u25CF ${event.eventDetails}<br/>`;
             }
         });
     });
 }
 
 function setupDetailsWindow() {
-    const detailsWindow = document.getElementById("details-container");
     const dateBoxes = document.querySelectorAll(".date-box");
     dateBoxes.forEach(dateBox => {
         dateBox.addEventListener("click", function() {
             const eventDetails = dateBox.querySelector(".event-details")
             if (eventDetails) {
-                detailsWindow.innerHTML = `<div>${eventDetails.innerHTML}</div>`;
+                detailsWindow.innerHTML = `${eventDetails.innerHTML}`;
             } else {
                 detailsWindow.innerHTML = "";
             }
