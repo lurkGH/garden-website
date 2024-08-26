@@ -29,7 +29,7 @@ function setupCalendar(change) {
     loadDays();
     loadCurrentDay();
     addEvents();
-    //setupDetailsWindow();
+    setupDetailsWindow();
     addEventListeners();
 }
 
@@ -151,12 +151,13 @@ function setupDetailsWindow() {
     const detailsWindow = document.getElementById("details-container");
     const dateBoxes = document.querySelectorAll(".date-box");
     dateBoxes.forEach(dateBox => {
-        dateBox.addEventListener("click", function(event) {
-            const dateID = event.target.id;
-            let selectedDate = document.getElementById(dateID).innerHTML;
-
-            detailsWindow.innerHTML = "";
-            detailsWindow.innerHTML += `<div>${selectedDate}</div>`;
+        dateBox.addEventListener("click", function() {
+            const eventDetails = dateBox.querySelector(".event-details")
+            if (eventDetails) {
+                detailsWindow.innerHTML = `<div>${eventDetails.innerHTML}</div>`;
+            } else {
+                detailsWindow.innerHTML = "";
+            }
         })
     })
 }
