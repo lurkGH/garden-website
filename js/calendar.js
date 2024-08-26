@@ -1,6 +1,7 @@
 class Event {
-    constructor(eventDate, eventDetails) {
+    constructor(eventDate, eventType, eventDetails) {
         this.eventDate = eventDate;
+        this.eventType = eventType;
         this.eventDetails = eventDetails;
     }
 }
@@ -79,9 +80,9 @@ function setupTheme() {
 function setupMonthYearRow() {
     const monthNames = ["January", "February", "March", "April", "May", "June", 
         "July", "August", "September", "October", "November", "December"];
-        calendarContainer.innerHTML += "<div class='month-row' id='left-arrow'>\u{2B98}</div>";
+        calendarContainer.innerHTML += "<div class='month-row' id='left-arrow'><img class='arrow' src='./images/icon-arrow-left.png'></div>";
         calendarContainer.innerHTML += `<div class='month-row' id='month-year-name'>${monthNames[month - 1]} ${year}</div>`;
-    calendarContainer.innerHTML += "<div class='month-row' id='right-arrow'>\u{2B9A}</div>";
+        calendarContainer.innerHTML += "<div class='month-row' id='right-arrow'><img class='arrow' src='./images/icon-arrow-right.png'></div>";
 }
 
 function setupWeekdayRow() {
@@ -135,13 +136,31 @@ function addEvents() {
     })
     .then(function(data) {
         const events = data.map(function(item) {
-            return new Event(item.eventDate, item.eventDetails);
+            return new Event(item.eventDate, item.eventType, item.eventDetails);
         });
         events.forEach(function(event) {
             let eventCell = document.getElementById(event.eventDate);
             if (eventCell) {
                 let parentCell = eventCell.parentElement;
-                parentCell.innerHTML += `<div class='event-details'>${event.eventDetails}</div>`;
+                let eventContainer = parentCell.querySelector(".event-container");
+                let eventBall = document.createElement("div");
+                let eventDetails = parentCell.querySelector(".event-details");
+                // Creates an event container if it doesn't already exist
+                if (!eventContainer) {
+                    eventContainer = document.createElement("div");
+                    eventContainer.className = "event-container";
+                    parentCell.appendChild(eventContainer);
+                }
+                // Sets up and adds event ball to event container
+                eventBall.className = `event-ball ${event.eventType}`;
+                eventContainer.appendChild(eventBall);
+                // Creates event-details div if it doesn't already exist
+                if (!eventDetails) {
+                    eventDetails = document.createElement("div");
+                    eventDetails.className = "event-details";
+                    parentCell.appendChild(eventDetails);
+                }
+                eventDetails.innerHTML += `${event.eventDetails}<br/>`;
             }
         });
     });

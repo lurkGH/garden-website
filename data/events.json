@@ -1,14 +1,72 @@
 [
     {
+        "eventDate": "2024-1-1",
+        "eventType": "closing",
+        "eventDetails": "New Year's Day - Garden closed to public"
+    },
+    {
+        "eventDate": "2024-5-26",
+        "eventType": "closing",
+        "eventDetails": "Memorial Day - Garden closed to public"
+    },
+    {
+        "eventDate": "2024-7-4",
+        "eventType": "closing",
+        "eventDetails": "Independence Day - Garden closed to public"
+    },
+    {
+        "eventDate": "2024-8-1",
+        "eventType": "sale",
+        "eventDetails": "Greenhouse Plant Sale 20% Off"
+    },
+    {
         "eventDate": "2024-8-10",
-        "eventDetails": "12:00 pm Concert"
+        "eventType": "wedding",
+        "eventDetails": "10:00 am Wedding"
+    },
+    {
+        "eventDate": "2024-8-10",
+        "eventType": "workshop",
+        "eventDetails": "1:00 pm Bonsai Workshop"
+    },
+    {
+        "eventDate": "2024-8-14",
+        "eventType": "special",
+        "eventDetails": "All Day Volunteer Litter Collection"
     },
     {
         "eventDate": "2024-8-25",
-        "eventDetails": "10:00 am Wedding"
+        "eventType": "wedding",
+        "eventDetails": "11:00 am Wedding"
     },
     {
-        "eventDate": "2024-9-3",
-        "eventDetails": "10:00 am Wedding"
+        "eventDate": "2024-8-30",
+        "eventType": "children",
+        "eventDetails": "9:30 am Local Elementary School Field Trip"
+    },
+    {
+        "eventDate": "2024-8-31",
+        "eventType": "concert",
+        "eventDetails": "3:00 pm Concert"
+    },
+    {
+        "eventDate": "2024-9-2",
+        "eventType": "closing",
+        "eventDetails": "Labor Day - Garden closed to public"
+    },
+    {
+        "eventDate": "2024-9-14",
+        "eventType": "wedding",
+        "eventDetails": "9:00 am Wedding"
+    },
+    {
+        "eventDate": "2024-11-28",
+        "eventType": "closing",
+        "eventDetails": "Thanksgiving - Garden closed to public"
+    },
+    {
+        "eventDate": "2024-12-25",
+        "eventType": "closing",
+        "eventDetails": "Christmas - Garden closed to public"
     }
 ]

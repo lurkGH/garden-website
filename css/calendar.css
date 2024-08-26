@@ -26,6 +26,9 @@
     grid-column: 7 / 8;
     cursor: pointer;
 }
+.arrow {
+    height: 1rem;
+}
 .week-row {
     font-weight: bold;
 }
@@ -36,11 +39,26 @@
 .overflow-date {
     opacity: 30%;
 }
+.event-container {
+    height: 30%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: .25rem;
+    padding-top: .2rem;
+}
+.event-ball {
+    display: inline-block;
+    height: .75rem;
+    width: .75rem;
+    border-radius: 50%;
+}
 .event {
     font-size: .75rem;
 }
 .event-details {
-    font-size: .7rem;
+    display: none;
 }
 .current-day {
     background-color: rgba(255, 255, 255, 0.6);
@@ -66,4 +84,26 @@
     .event-details {
         font-size: 1rem;
     }
+}
+/*Event Types*/
+.children {
+    background-color: skyblue;
+}
+.closing {
+    background-color: gray;
+}
+.concert {
+    background-color: purple;
+}
+.sale {
+    background-color: green;
+}
+.special {
+    background-color: gold;
+}
+.wedding {
+    background-color: pink;
+}
+.workshop {
+    background-color: lightgreen;
 }
