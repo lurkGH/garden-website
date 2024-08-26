@@ -9,6 +9,7 @@
 .date-box {
     justify-self: center stretch;
     overflow: hidden;
+    cursor: pointer;
 }
 .month-row {
     font-weight: bold;
@@ -41,11 +42,19 @@
 .event-details {
     font-size: .7rem;
 }
-#current-day {
+.current-day {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     width: fit-content;
     padding: 0 .4rem .2rem .4rem;
     margin-left: auto;
     margin-right: auto;
+}
+#details-container {
+}
+@media all and (min-width: 768px) {
+    #calendar-container {
+        height: 70vh;
+        padding-top: 2rem;
+    }
 }

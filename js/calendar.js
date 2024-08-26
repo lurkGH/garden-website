@@ -29,6 +29,7 @@ function setupCalendar(change) {
     loadDays();
     loadCurrentDay();
     addEvents();
+    //setupDetailsWindow();
     addEventListeners();
 }
 
@@ -123,7 +124,7 @@ function loadCurrentDay() {
     let dateID = currYear + "-" + currMonth + "-" + currDay;
     let calendarDate = document.getElementById(dateID);
     if (calendarDate) {
-        calendarDate.id = "current-day";
+        calendarDate.classList.add("current-day");
     }
 }
 
@@ -139,10 +140,25 @@ function addEvents() {
         events.forEach(function(event) {
             let eventCell = document.getElementById(event.eventDate);
             if (eventCell) {
-                eventCell.innerHTML += `<div class='event-details'>${event.eventDetails}</div>`;
+                let parentCell = eventCell.parentElement;
+                parentCell.innerHTML += `<div class='event-details'>${event.eventDetails}</div>`;
             }
         });
     });
+}
+
+function setupDetailsWindow() {
+    const detailsWindow = document.getElementById("details-container");
+    const dateBoxes = document.querySelectorAll(".date-box");
+    dateBoxes.forEach(dateBox => {
+        dateBox.addEventListener("click", function(event) {
+            const dateID = event.target.id;
+            let selectedDate = document.getElementById(dateID).innerHTML;
+
+            detailsWindow.innerHTML = "";
+            detailsWindow.innerHTML += `<div>${selectedDate}</div>`;
+        })
+    })
 }
 
 function addEventListeners() {
