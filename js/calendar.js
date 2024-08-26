@@ -79,9 +79,9 @@ function setupTheme() {
 function setupMonthYearRow() {
     const monthNames = ["January", "February", "March", "April", "May", "June", 
         "July", "August", "September", "October", "November", "December"];
-    calendarContainer.innerHTML += "<div class='month-row' id='left-arrow'>⮘</div>";
-    calendarContainer.innerHTML += `<div class='month-row' id='month-year-name'>${monthNames[month - 1]} ${year}</div>`;
-    calendarContainer.innerHTML += "<div class='month-row' id='right-arrow'>⮚</div>";
+        calendarContainer.innerHTML += "<div class='month-row' id='left-arrow'>\u{2B98}</div>";
+        calendarContainer.innerHTML += `<div class='month-row' id='month-year-name'>${monthNames[month - 1]} ${year}</div>`;
+    calendarContainer.innerHTML += "<div class='month-row' id='right-arrow'>\u{2B9A}</div>";
 }
 
 function setupWeekdayRow() {
