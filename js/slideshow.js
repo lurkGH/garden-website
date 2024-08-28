@@ -1,9 +1,9 @@
 const slides = [
-    "url(./images/slideshow-1.webp)",
-    "url(./images/slideshow-2.webp)",
-    "url(./images/slideshow-3.webp)"
+    "url(./images/gallery-promenade-1.jpeg)",
+    "url(./images/gallery-zen-1.jpeg)",
+    "url(./images/gallery-cafe-1.jpeg)"
 ];
-const transitionDelay = 3000; // 1000 = 1 sec
+const transitionDelay = 4000; // 1000 = 1 sec
 const resumeDelay = 5000;
 let currIndex = 0;
 let slideshowTimeout;
