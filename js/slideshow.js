@@ -1,7 +1,7 @@
 const slides = [
-    "url(./images/gallery-promenade-1.jpeg)",
-    "url(./images/gallery-zen-1.jpeg)",
-    "url(./images/gallery-cafe-1.jpeg)"
+    "url(./images/gallery-promenade-1.webp)",
+    "url(./images/gallery-zen-1.webp)",
+    "url(./images/gallery-cafe-1.webp)"
 ];
 const transitionDelay = 4000; // 1000 = 1 sec
 const resumeDelay = 5000;
@@ -31,12 +31,12 @@ function toggleTransition(applyTransition) {
     let circles = document.getElementsByClassName("circle");
     // Resets all circles to default brightness
     for (let i = 0; i < circles.length; i++) {
-        circles[i].style.backgroundColor = "white";
+        circles[i].style.backgroundColor = "gray";
     }
 
     // Shades the current circle darker
     if (circles[currIndex]) {
-        circles[currIndex].style.backgroundColor = "gray";
+        circles[currIndex].style.backgroundColor = "white";
     }
     
     // Toggles the transition effect based on the parameter
@@ -98,5 +98,5 @@ function startSlideshow() {
 
 window.onload = function() {
     preload(slides, startSlideshow);
-    document.getElementsByClassName("circle")[0].style.backgroundColor = "gray";
+    document.getElementsByClassName("circle")[0].style.backgroundColor = "white";
 }

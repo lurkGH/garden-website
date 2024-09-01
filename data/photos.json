@@ -1,50 +1,50 @@
 [
     {
-        "source": "./images/slideshow-1.webp",
+        "source": "./images/gallery-promenade-1.webp",
         "caption": "The Promenade, the central path through the gardens"
     },
     {
-        "source": "./images/slideshow-2.webp",
+        "source": "./images/gallery-zen-1.webp",
         "caption": "Zen Garden pond"
     },
     {
-        "source": "./images/slideshow-3.webp",
+        "source": "./images/gallery-cafe-1.webp",
         "caption": "Sakura Cafe seating area"
     },
     {
-        "source": "./images/gallery-1.webp",
+        "source": "./images/gallery-zen-2.webp",
         "caption": "Bonsai Trail in Zen Garden"
     },
     {
-        "source": "./images/gallery-2.webp",
+        "source": "./images/gallery-chapel-1.webp",
         "caption": "Lewis-Moore Chapel in the Ceremonial Garden"
     },
     {
-        "source": "./images/gallery-3.webp",
+        "source": "./images/gallery-ceremonial-1.webp",
         "caption": "Riverview Bridge in the Ceremonial Garden"
     },
     {
-        "source": "./images/gallery-4.webp",
+        "source": "./images/gallery-hidden-1.webp",
         "caption": "Hidden Garden"
     },
     {
-        "source": "./images/gallery-5.webp",
+        "source": "./images/gallery-concentric-1.webp",
         "caption": "Annual tulip display within the Concentric Garden"
     },
     {
-        "source": "./images/gallery-6.webp",
+        "source": "./images/gallery-vista-1.webp",
         "caption": "Stillwater Meadow Vista"
     },
     {
-        "source": "./images/gallery-7.webp",
-        "caption": "Entry Drive during Annual Winter Festival Lights Show"
+        "source": "./images/gallery-festival-1.webp",
+        "caption": "Reception Center during Annual Winter Festival Lights Show"
     },
     {
-        "source": "./images/gallery-8.webp",
-        "caption": "Annual Winter Festival Lights Show display on central path"
+        "source": "./images/gallery-festival-2.webp",
+        "caption": "Annual Winter Festival Lights Show display on the Promenade"
     },
     {
-        "source": "./images/gallery-9.webp",
-        "caption": "Annual Winter Festival Lights Show display in Zen Garden"
+        "source": "./images/gallery-festival-3.webp",
+        "caption": "Annual Winter Festival Lights Show display on the Promenade"
     }
 ]
