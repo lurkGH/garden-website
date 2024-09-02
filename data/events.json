@@ -50,6 +50,11 @@
         "eventDetails": "3:00 pm Concert"
     },
     {
+        "eventDate": "2024-9-1",
+        "eventType": "wedding",
+        "eventDetails": "10:00 am Wedding"
+    },
+    {
         "eventDate": "2024-9-2",
         "eventType": "closing",
         "eventDetails": "Labor Day - Garden closed to public"
@@ -75,6 +80,11 @@
         "eventDetails": "1:00 pm Bonsai Workshop"
     },
     {
+        "eventDate": "2024-9-15",
+        "eventType": "wedding",
+        "eventDetails": "1:00 pm Wedding"
+    },
+    {
         "eventDate": "2024-9-22",
         "eventType": "wedding",
         "eventDetails": "11:00 am Wedding"
@@ -85,14 +95,74 @@
         "eventDetails": "9:00 am PreK Storytime in Children's Garden"
     },
     {
+        "eventDate": "2024-9-28",
+        "eventType": "wedding",
+        "eventDetails": "5:00 pm Wedding"
+    },
+    {
         "eventDate": "2024-9-30",
         "eventType": "concert",
         "eventDetails": "3:00 pm Concert"
     },
     {
+        "eventDate": "2024-10-3",
+        "eventType": "sale",
+        "eventDetails": "Greenhouse Plant Sale 20% Off"
+    },
+    {
+        "eventDate": "2024-10-5",
+        "eventType": "wedding",
+        "eventDetails": "2:30 pm Wedding"
+    },
+    {
+        "eventDate": "2024-10-9",
+        "eventType": "special",
+        "eventDetails": "All Day Volunteer Litter Collection"
+    },
+    {
+        "eventDate": "2024-10-12",
+        "eventType": "workshop",
+        "eventDetails": "1:00 pm Bonsai Workshop"
+    },
+    {
+        "eventDate": "2024-10-13",
+        "eventType": "wedding",
+        "eventDetails": "10:00 am Wedding"
+    },
+    {
+        "eventDate": "2024-10-21",
+        "eventType": "workshop",
+        "eventDetails": "10:00 am Pumpkin Carving Workshop"
+    },
+    {
+        "eventDate": "2024-10-26",
+        "eventType": "wedding",
+        "eventDetails": "3:00 pm Wedding"
+    },
+    {
+        "eventDate": "2024-10-27",
+        "eventType": "wedding",
+        "eventDetails": "5:00 pm Wedding"
+    },
+    {
+        "eventDate": "2024-10-30",
+        "eventType": "wedding",
+        "eventDetails": "5:00 pm Wedding"
+    },
+    {
         "eventDate": "2024-10-31",
         "eventType": "special",
         "eventDetails": "All Day Spook-tober Festival"
+    },
+    {
+        "eventDate": "2024-10-31",
+        "eventType": "concert",
+        "eventDetails": "3:00 pm Concert"
+    },
+    {
+        "eventDate": "2024-10-31",
+        "eventType": "children",
+        "eventDetails": "5:00 pm Trick-or-Treating at Children's Garden"
     },
     {
         "eventDate": "2024-11-28",
