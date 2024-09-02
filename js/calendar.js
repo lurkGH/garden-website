@@ -14,6 +14,8 @@ let year = date.getFullYear();
 let month = date.getMonth() + 1;
 let startX = 0;
 let endX = 0;
+let isSwiping = false;
+const horizontalThreshold = 30;
 
 function setupCalendar(change) {
     // Updates year and month based on change from arrow clicks
@@ -211,26 +213,33 @@ function addEventListeners() {
     document.getElementById("right-arrow").addEventListener("click", () => setupCalendar(1));
 }
 
-mainElement.addEventListener("touchstart", function(event) {
-    startX = event.touches[0].clientX;
-}, false);
+mainElement.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    isSwiping = false;
+});
 
-mainElement.addEventListener("touchend", function(event) {
-    endX = event.changedTouches[0].clientX;
-    handleSwipe();
-}, false);
+mainElement.addEventListener('touchmove', (e) => {
+    const currentX = e.touches[0].clientX;
+    const currentY = e.touches[0].clientY;
+    const diffX = currentX - startX;
+    const diffY = currentY - startY;
 
-function handleSwipe() {
-    const swipeDistance = endX - startX;
-    const threshold = 50; // Minimum distance for a swipe to be registered
+    // Prevents vertical scroll when swiping horizontally
+    if (Math.abs(diffX) > horizontalThreshold && Math.abs(diffX) > Math.abs(diffY)) {
+        isSwiping = true;
+        e.preventDefault();
+    }
+});
 
-    if (Math.abs(swipeDistance) > threshold) {
-        if (swipeDistance < 0) {
+mainElement.addEventListener('touchend', (e) => {
+    if (isSwiping) {
+        if (startX > e.changedTouches[0].clientX) {
             setupCalendar(1);
         } else {
             setupCalendar(-1);
         }
     }
-}
+});
 
 document.addEventListener("DOMContentLoaded", () => setupCalendar(0));
