@@ -35,52 +35,53 @@ function setupCalendar(change) {
     loadDays();
     loadCurrentDay();
     addEvents();
-    setupDetailsWindow();
     addEventListeners();
 }
 
 function setupTheme() {
+    const themeContainer = document.querySelector("main");
     switch(month) {
         case 1:
-            document.body.style.backgroundImage = "linear-gradient(to right, #B0E0E6, #FFFFFF)";
+            themeContainer.style.backgroundImage = "linear-gradient(to right, white, powderblue, skyblue)";
             break;
         case 2:
-            document.body.style.backgroundImage = "linear-gradient(to right, #9966CC, #FFB6C1)";
+            themeContainer.style.backgroundImage = "linear-gradient(to right, powderblue, lightpink, plum)";
             break;
         case 3:
-            document.body.style.backgroundImage = "linear-gradient(to right, #00FF7F, #B0E0E6)";
+            themeContainer.style.backgroundImage = "linear-gradient(to right, skyblue, aquamarine, palegreen)";
             break;
         case 4:
-            document.body.style.backgroundImage = "linear-gradient(to right, #FFB6C1, #FFD700)";
+            themeContainer.style.backgroundImage = "linear-gradient(to right, springgreen, lightpink, khaki)";
             break;
         case 5:
-            document.body.style.backgroundImage = "linear-gradient(to right, #50C878, #FFD700)";
+            themeContainer.style.backgroundImage = "linear-gradient(to right, khaki, yellowgreen, goldenrod)";
             break;
         case 6:
-            document.body.style.backgroundImage = "linear-gradient(to right, #FFD700, #FF8C00)";
+            themeContainer.style.backgroundImage = "linear-gradient(to right, darkkhaki, salmon, orange)";
             break;
         case 7:
-            document.body.style.backgroundImage = "linear-gradient(to right, #FF4500, #FFD700)";
+            themeContainer.style.backgroundImage = "linear-gradient(to right, darkorange, tomato, chocolate)";
             break;
         case 8:
-            document.body.style.backgroundImage = "linear-gradient(to right, #FF8C00, #DAA520)";
+            themeContainer.style.backgroundImage = "linear-gradient(to right, salmon, sandybrown, goldenrod)";
             break;
         case 9:
-            document.body.style.backgroundImage = "linear-gradient(to right, #6B8E23, #FFD700)";
+            themeContainer.style.backgroundImage = "linear-gradient(to right, olive, lightcoral, chocolate)";
             break;
         case 10:
-            document.body.style.backgroundImage = "linear-gradient(to right, #FF7518, #FFD700)";
+            themeContainer.style.backgroundImage = "linear-gradient(to right, sienna, darkorange, saddlebrown)";
             break;
         case 11:
-            document.body.style.backgroundImage = "linear-gradient(to right, #D2691E, #CD5C5C)";
+            themeContainer.style.backgroundImage = "linear-gradient(to right, chocolate, darksalmon, moccasin)";
             break;
         case 12:
-            document.body.style.backgroundImage = "linear-gradient(to right, #F08080, #FFFFFF)";
+            themeContainer.style.backgroundImage = "linear-gradient(to right, peachpuff, pink, darkseagreen)";
             break;
         default:
             break;
     }
 }
+
 
 function setupMonthYearRow() {
     const monthNames = ["January", "February", "March", "April", "May", "June", 
@@ -164,25 +165,43 @@ function addEvents() {
                     eventDetails = document.createElement("div");
                     eventDetails.className = "event-details";
                     parentCell.appendChild(eventDetails);
+                    eventDetails.innerHTML += `<strong>${event.eventDate}</strong><br/>`;
                 }
                 eventDetails.innerHTML += `\u25CF ${event.eventDetails}<br/>`;
             }
         });
+        setupDetailsWindow();
     });
 }
 
 function setupDetailsWindow() {
     const dateBoxes = document.querySelectorAll(".date-box");
+    const currentDayElement = document.querySelector(".current-day");
+
+    // Sets initial details window to current day event
+    if (currentDayElement) {
+        const todayBox = currentDayElement.parentElement;
+        const eventDetails = todayBox.querySelector(".event-details");
+        if (eventDetails) {
+            detailsWindow.innerHTML = `${eventDetails.innerHTML}`;
+        } else {
+            detailsWindow.innerHTML = "No events for today.";
+        }
+    }
+
+    // Adds click functionality for displaying event descriptions
     dateBoxes.forEach(dateBox => {
         dateBox.addEventListener("click", function() {
-            const eventDetails = dateBox.querySelector(".event-details")
+            const eventDetails = dateBox.querySelector(".event-details");
+            const dateElement = dateBox.querySelector('.date');
+            const dateId = dateElement ? dateElement.id : "this day";
             if (eventDetails) {
                 detailsWindow.innerHTML = `${eventDetails.innerHTML}`;
             } else {
-                detailsWindow.innerHTML = "";
+                detailsWindow.innerHTML = "No events for this day.";
             }
-        })
-    })
+        });
+    });
 }
 
 function addEventListeners() {

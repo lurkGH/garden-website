@@ -55,9 +55,44 @@
         "eventDetails": "Labor Day - Garden closed to public"
     },
     {
+        "eventDate": "2024-9-5",
+        "eventType": "sale",
+        "eventDetails": "Greenhouse Plant Sale 20% Off"
+    },
+    {
+        "eventDate": "2024-9-11",
+        "eventType": "special",
+        "eventDetails": "All Day Volunteer Litter Collection"
+    },
+    {
         "eventDate": "2024-9-14",
         "eventType": "wedding",
         "eventDetails": "9:00 am Wedding"
+    },
+    {
+        "eventDate": "2024-9-14",
+        "eventType": "workshop",
+        "eventDetails": "1:00 pm Bonsai Workshop"
+    },
+    {
+        "eventDate": "2024-9-22",
+        "eventType": "wedding",
+        "eventDetails": "11:00 am Wedding"
+    },
+    {
+        "eventDate": "2024-9-26",
+        "eventType": "children",
+        "eventDetails": "9:00 am PreK Storytime in Children's Garden"
+    },
+    {
+        "eventDate": "2024-9-30",
+        "eventType": "concert",
+        "eventDetails": "3:00 pm Concert"
+    },
+    {
+        "eventDate": "2024-10-31",
+        "eventType": "special",
+        "eventDetails": "All Day Spook-tober Festival"
     },
     {
         "eventDate": "2024-11-28",

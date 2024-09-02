@@ -1,3 +1,16 @@
+body {
+    background-image: url(../images/gallery-festival-1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;}
+main {
+    width: 96%;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1em;
+}
 #calendar-container {
     height: 55vh;
     display: grid;
@@ -61,7 +74,8 @@
     display: none;
 }
 .current-day {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, .5);
+    border: outset 2px;
     border-radius: 50%;
     width: fit-content;
     padding: 0 .4rem .1rem .4rem;
@@ -70,13 +84,13 @@
 }
 #details-container {
     width: 90%;
+    padding-bottom: 2rem;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.75;
 }
 @media all and (min-width: 768px) {
     #calendar-container {
-        height: 70vh;
         padding-top: 2rem;
     }
     .event {
