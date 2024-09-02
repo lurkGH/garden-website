@@ -185,11 +185,12 @@ function setupDetailsWindow() {
     // Sets initial details window to current day event
     if (currentDayElement) {
         const todayBox = currentDayElement.parentElement;
+        const todayDate = currentDayElement.id;
         const eventDetails = todayBox.querySelector(".event-details");
         if (eventDetails) {
             detailsWindow.innerHTML = `${eventDetails.innerHTML}`;
         } else {
-            detailsWindow.innerHTML = "No events for today.";
+            detailsWindow.innerHTML = `<strong>${todayDate}</strong></br>No events for today.`;
         }
     }
 
@@ -198,11 +199,14 @@ function setupDetailsWindow() {
         dateBox.addEventListener("click", function() {
             const eventDetails = dateBox.querySelector(".event-details");
             const dateElement = dateBox.querySelector('.date');
-            const dateId = dateElement ? dateElement.id : "this day";
             if (eventDetails) {
                 detailsWindow.innerHTML = `${eventDetails.innerHTML}`;
             } else {
-                detailsWindow.innerHTML = "No events for this day.";
+                if (dateElement && dateElement.id) {
+                    detailsWindow.innerHTML = `<strong>${dateElement.id}</strong><br/>No events for this day.`;
+                } else {
+                    detailsWindow.innerHTML = "";
+                }
             }
         });
     });
