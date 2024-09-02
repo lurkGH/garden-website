@@ -6,11 +6,14 @@ class Event {
     }
 }
 
+const mainElement = document.querySelector("main");
 const calendarContainer = document.getElementById("calendar-container");
 const detailsWindow = document.getElementById("details-container");
 const date = new Date();
 let year = date.getFullYear();
 let month = date.getMonth() + 1;
+let startX = 0;
+let endX = 0;
 
 function setupCalendar(change) {
     // Updates year and month based on change from arrow clicks
@@ -39,43 +42,42 @@ function setupCalendar(change) {
 }
 
 function setupTheme() {
-    const themeContainer = document.querySelector("main");
     switch(month) {
         case 1:
-            themeContainer.style.backgroundImage = "linear-gradient(to right, white, powderblue, skyblue)";
+            mainElement.style.backgroundImage = "linear-gradient(to right, white, powderblue, skyblue)";
             break;
         case 2:
-            themeContainer.style.backgroundImage = "linear-gradient(to right, powderblue, lightpink, plum)";
+            mainElement.style.backgroundImage = "linear-gradient(to right, powderblue, lightpink, plum)";
             break;
         case 3:
-            themeContainer.style.backgroundImage = "linear-gradient(to right, skyblue, aquamarine, palegreen)";
+            mainElement.style.backgroundImage = "linear-gradient(to right, skyblue, aquamarine, palegreen)";
             break;
         case 4:
-            themeContainer.style.backgroundImage = "linear-gradient(to right, springgreen, lightpink, khaki)";
+            mainElement.style.backgroundImage = "linear-gradient(to right, springgreen, lightpink, khaki)";
             break;
         case 5:
-            themeContainer.style.backgroundImage = "linear-gradient(to right, khaki, yellowgreen, goldenrod)";
+            mainElement.style.backgroundImage = "linear-gradient(to right, khaki, yellowgreen, goldenrod)";
             break;
         case 6:
-            themeContainer.style.backgroundImage = "linear-gradient(to right, darkkhaki, salmon, orange)";
+            mainElement.style.backgroundImage = "linear-gradient(to right, darkkhaki, salmon, orange)";
             break;
         case 7:
-            themeContainer.style.backgroundImage = "linear-gradient(to right, darkorange, tomato, chocolate)";
+            mainElement.style.backgroundImage = "linear-gradient(to right, darkorange, tomato, chocolate)";
             break;
         case 8:
-            themeContainer.style.backgroundImage = "linear-gradient(to right, salmon, sandybrown, goldenrod)";
+            mainElement.style.backgroundImage = "linear-gradient(to right, salmon, sandybrown, goldenrod)";
             break;
         case 9:
-            themeContainer.style.backgroundImage = "linear-gradient(to right, olive, lightcoral, chocolate)";
+            mainElement.style.backgroundImage = "linear-gradient(to right, olive, lightcoral, chocolate)";
             break;
         case 10:
-            themeContainer.style.backgroundImage = "linear-gradient(to right, sienna, darkorange, saddlebrown)";
+            mainElement.style.backgroundImage = "linear-gradient(to right, sienna, darkorange, saddlebrown)";
             break;
         case 11:
-            themeContainer.style.backgroundImage = "linear-gradient(to right, chocolate, darksalmon, moccasin)";
+            mainElement.style.backgroundImage = "linear-gradient(to right, chocolate, darksalmon, moccasin)";
             break;
         case 12:
-            themeContainer.style.backgroundImage = "linear-gradient(to right, peachpuff, pink, darkseagreen)";
+            mainElement.style.backgroundImage = "linear-gradient(to right, peachpuff, pink, darkseagreen)";
             break;
         default:
             break;
@@ -207,6 +209,28 @@ function setupDetailsWindow() {
 function addEventListeners() {
     document.getElementById("left-arrow").addEventListener("click", () => setupCalendar(-1));
     document.getElementById("right-arrow").addEventListener("click", () => setupCalendar(1));
+}
+
+mainElement.addEventListener("touchstart", function(event) {
+    startX = event.touches[0].clientX;
+}, false);
+
+mainElement.addEventListener("touchend", function(event) {
+    endX = event.changedTouches[0].clientX;
+    handleSwipe();
+}, false);
+
+function handleSwipe() {
+    const swipeDistance = endX - startX;
+    const threshold = 50; // Minimum distance for a swipe to be registered
+
+    if (Math.abs(swipeDistance) > threshold) {
+        if (swipeDistance < 0) {
+            setupCalendar(1);
+        } else {
+            setupCalendar(-1);
+        }
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => setupCalendar(0));
