@@ -1,116 +1,128 @@
-/*****Common*****/
-
 /*Overall*/
 * {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin: 0;
 }
+
 html, body {
   overflow-x: hidden;
 }
+
 body {
   position: relative;
   min-height: 100vh;
 }
 
-/*****Components*****/
-
 /*Header*/
 header {
   background-color: darkgreen;
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(255,255,255,.2));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.2));
   border-style: solid;
   border-width: 0 0 1px 0;
   border-color: lightslategray;
 }
+
 header ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: .2rem;
+  padding: 0.2rem;
   gap: 0rem 1.5rem;
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: white;
   list-style: none;
 }
+
 header ul a:hover {
   filter: brightness(70%);
 }
+
 header img {
-  gap: 0rem .5rem;
+  gap: 0rem 0.5rem;
 }
 
 /*Navbar*/
 nav {
-  background-color: floralwhite;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
+  background-color: floralwhite;
 }
+
 nav a {
-  margin-right: auto;
   justify-content: flex-start;
 }
-nav a :hover {
+
+nav a:hover {
   filter: brightness(70%);
 }
+
 .nav-logo {
   width: 100px;
-  padding: .3rem .5rem 0rem .5rem;
+  padding: 0.3rem 0.5rem 0rem 0.5rem;
 }
+
 nav ul {
   display: inline-flex;
   flex-grow: 1;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  gap: .3rem 1rem;
-  padding: .2rem 1.5rem;
+  gap: 0.3rem 1rem;
+  padding: 0.2rem 1.5rem;
   margin-left: auto;
   list-style: none;
 }
+
 nav ul li a {
   font-size: 1.25rem;
   color: black;
   text-decoration: none;
 }
+
 nav ul li a:hover {
-  text-decoration: underline black 6%;
-  text-underline-offset: .25em;
+  -webkit-text-decoration: underline black 6%;
+          text-decoration: underline black 6%;
+  text-underline-offset: 0.25em;
 }
+
 nav ul li a:visited {
   color: black;
 }
+
 @media all and (min-width: 768px) {
   nav ul {
-    gap: .3rem 2rem;
+    gap: 0.3rem 2rem;
     padding: 0 2.5rem;
   }
   nav ul li a {
     font-size: 1.5rem;
-    padding: .2rem .5rem;
+    padding: 0.2rem 0.5rem;
   }
 }
-
 /*Footer*/
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   background-color: darkgreen;
-  background-image: linear-gradient(rgba(255,255,255,.2), rgba(0,0,0,0.3));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.3));
   border-style: solid;
   border-width: 1px 0 0px 0;
   border-color: lightslategray;
-  padding: .1rem .5rem .3rem .5rem;
+  padding: 0.1rem 0.5rem 0.3rem 0.5rem;
 }
+
 footer ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: .5rem;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
   list-style: none;
-  font-size: .8rem;
-}
+  font-size: 0.8rem;
+}/*# sourceMappingURL=style.css.map */

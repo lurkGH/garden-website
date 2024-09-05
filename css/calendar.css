@@ -53,6 +53,7 @@ main {
 .date {
     color: black;
     font-weight: bold;
+    margin-top: .1rem
 }
 .overflow-date {
     opacity: 30%;

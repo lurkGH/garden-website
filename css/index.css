@@ -1,117 +1,118 @@
 /*****Home*****/
 
 body {
-  background-color: floralwhite;
-}
-
-/*Slideshow*/
-.slideshow {
-  background-image: url(../images/gallery-promenade-1.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center;
-  transition: background-image 1s linear;
-}
-.slideshow-container {
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.slideshow-container h1 {
-  font-family: "Italianno";
-  font-size: 4rem;
-  color: white;
-  text-align: center;
-  text-shadow: 2px 2px black;
-}
-.slideshow-container h2 {
-  font-family: "Fira Sans Extra Condensed";
-  font-size: 1.5rem;
-  color: white;
-  text-align: center;
-  text-shadow: 2px 2px black;
-}
-.slideshow-indicators {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 1rem;
-}
-.arrow {
-  cursor: pointer;
-  font-size: 2rem;
-  color: white;
-  padding: 0 1rem;
-  transition: background-color 0.3s;
-}
-.arrow:hover {
-  filter: brightness(70%);
-}
-.circles {
-  display: flex;
-  gap: 1rem;
-}
-.circle {
-  cursor: pointer;
-  width: 1rem;
-  height: 1rem;
-  background-color: gray;
-  border-radius: 50%;
-  transition: background-color .5s;
-}
-.circle:hover {
-  filter: brightness(70%);
-}
-@media all and (min-width: 768px) {
+    background-color: floralwhite;
+  }
+  
+  /*Slideshow*/
   .slideshow {
-    background-attachment: fixed;
+    background-image: url(../images/gallery-promenade-1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    transition: background-image 1s linear;
   }
   .slideshow-container {
-    height: 70vh;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .slideshow-container h1 {
-    font-size: 8rem;
+    font-family: "Italianno";
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px black;
   }
   .slideshow-container h2 {
-    font-size: 3rem;
+    font-family: "Fira Sans Extra Condensed";
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px black;
   }
-}
-
-/*Main*/
-main {
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  width: 95%;
-  padding-bottom: 2rem;
-  margin: 0 auto 2rem auto;
-}
-main h3 {
-  padding: .5rem;
-}
-main h4 {
-  background-color: maroon;
-  color: white;
-  padding: .5rem;
-  margin: .5rem 0 .5rem 0;
-}
-main p {
-  line-height: 1.5rem;
-  padding: .5rem;
-}
-main ul {
-  padding: 0;
-  margin: 0;
-}
-main li {
-  list-style: square inside;
-  padding: .1rem 0;
-}
-main button {
-  padding: .5rem;
-  box-shadow: 1px 1px 2px;
-  margin: .5rem;
-}
+  .slideshow-indicators {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+  }
+  .arrow {
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    padding: 0 1rem;
+    transition: background-color 0.3s;
+  }
+  .arrow:hover {
+    filter: brightness(70%);
+  }
+  .circles {
+    display: flex;
+    gap: 1rem;
+  }
+  .circle {
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    background-color: gray;
+    border-radius: 50%;
+    transition: background-color .5s;
+  }
+  .circle:hover {
+    filter: brightness(70%);
+  }
+  @media all and (min-width: 768px) {
+    .slideshow {
+      background-attachment: fixed;
+    }
+    .slideshow-container {
+      height: 70vh;
+    }
+    .slideshow-container h1 {
+      font-size: 8rem;
+    }
+    .slideshow-container h2 {
+      font-size: 3rem;
+    }
+  }
+  
+  /*Main*/
+  main {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    width: 95%;
+    padding-bottom: 2rem;
+    margin: 0 auto 2rem auto;
+  }
+  main h3 {
+    padding: .5rem;
+  }
+  main h4 {
+    background-color: maroon;
+    color: white;
+    padding: .5rem;
+    margin: .5rem 0 .5rem 0;
+  }
+  main p {
+    line-height: 1.5rem;
+    padding: .5rem;
+  }
+  main ul {
+    padding: 0;
+    margin: 0;
+  }
+  main li {
+    list-style: square inside;
+    padding: .1rem 0;
+  }
+  main button {
+    padding: .5rem;
+    box-shadow: 1px 1px 2px;
+    margin: .5rem;
+  }
+  
