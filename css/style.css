@@ -86,7 +86,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  text-decoration: underline black 6%;
+  -webkit-text-decoration: underline black 6%;
+          text-decoration: underline black 6%;
   text-underline-offset: 0.25em;
 }
 
@@ -130,6 +131,7 @@ footer ul {
 
 /*****Index*****/
 .index-page {
+  background-color: floralwhite;
   /*Slideshow*/
   /*Main*/
 }
@@ -436,6 +438,7 @@ footer ul {
   background-color: rgba(255, 255, 255, 0.5);
   border: outset 1px;
   border-radius: 50%;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 0 0.4rem 0.1rem 0.4rem;
   margin-left: auto;
@@ -519,6 +522,7 @@ footer ul {
   border: 1px solid black;
 }
 .memberships-page .membership-features {
+  height: -moz-fit-content;
   height: fit-content;
   display: flex;
   flex-wrap: nowrap;
@@ -738,6 +742,4 @@ footer ul {
 .gallery-page .gallery-thumbnails:hover {
   cursor: pointer;
   filter: brightness(70%);
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
