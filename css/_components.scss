@@ -1,0 +1,138 @@
+$primaryColor: darkgreen;
+$secondaryColor: floralwhite;
+$darkGradient: rgba(0, 0, 0, 0.3);
+$lightGradient: rgba(255, 255, 255, .2);
+$darkFontColor: black;
+$lightFontColor: white;
+$smallFontSize: .8rem;
+$mediumFontSize: 1.25rem;
+$largeFontSize: 1.5rem;
+
+@mixin flex-center($wrap: nowrap) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: $wrap;
+}
+
+/*Overall*/
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+/***Components***/
+
+/*Header*/
+header {
+    background-color: $primaryColor;
+    background-image: linear-gradient($darkGradient, $lightGradient);
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: lightslategray;
+}
+
+header ul {
+    @include flex-center($wrap: wrap);
+    padding: .2rem;
+    gap: 0rem 1.5rem;
+    font-size: $smallFontSize;
+    color: $lightFontColor;
+    list-style: none;
+}
+
+header ul a:hover {
+    filter: brightness(70%);
+}
+
+header img {
+    gap: 0rem .5rem;
+}
+
+/*Navbar*/
+nav {
+    @include flex-center();
+    background-color: $secondaryColor;
+}
+
+nav a {
+    justify-content: flex-start;
+}
+
+nav a:hover {
+    filter: brightness(70%);
+}
+
+.nav-logo {
+    width: 100px;
+    padding: .3rem .5rem 0rem .5rem;
+}
+
+nav ul {
+    display: inline-flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: .3rem 1rem;
+    padding: .2rem 1.5rem;
+    margin-left: auto;
+    list-style: none;
+}
+
+nav ul li a {
+    font-size: $mediumFontSize;
+    color: $darkFontColor;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline black 6%;
+    text-underline-offset: .25em;
+}
+
+nav ul li a:visited {
+    color: $darkFontColor;
+}
+
+@media all and (min-width: 768px) {
+    nav ul {
+        gap: .3rem 2rem;
+        padding: 0 2.5rem;
+    }
+
+    nav ul li a {
+        font-size: $largeFontSize;
+        padding: .2rem .5rem;
+    }
+}
+
+/*Footer*/
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $primaryColor;
+    background-image: linear-gradient($lightGradient, $darkGradient);
+    border-style: solid;
+    border-width: 1px 0 0px 0;
+    border-color: lightslategray;
+    padding: .1rem .5rem .3rem .5rem;
+}
+
+footer ul {
+    @include flex-center();
+    gap: .5rem;
+    list-style: none;
+    font-size: $smallFontSize;
+}

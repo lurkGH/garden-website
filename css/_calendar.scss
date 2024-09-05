@@ -1,0 +1,161 @@
+/***Calendar***/
+
+.calendar-page {
+    background-image: url(../images/gallery-festival-1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+
+    main {
+        width: 96%;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 1em;
+    }
+
+    #calendar-container {
+        height: 55vh;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        text-align: center;
+        padding-top: 1rem;
+    }
+
+    .date-box {
+        justify-self: center stretch;
+        overflow: hidden;
+        cursor: pointer;
+        border: inset 1px transparent;
+        border-radius: .2em;
+    }
+
+    .date-box:hover {
+        border: outset 1px black;
+    }
+
+    .month-row {
+        font-weight: bold;
+    }
+
+    #left-arrow {
+        grid-column: 1 / 2;
+        cursor: pointer;
+    }
+
+    #month-year-name {
+        font-size: 1.2rem;
+        grid-column: 2 / 7;
+    }
+
+    #right-arrow {
+        grid-column: 7 / 8;
+        cursor: pointer;
+    }
+
+    .arrow {
+        height: 1rem;
+    }
+
+    .week-row {
+        font-weight: bold;
+    }
+
+    .date {
+        color: black;
+        font-weight: bold;
+        margin-top: .1rem
+    }
+
+    .overflow-date {
+        opacity: 30%;
+    }
+
+    .event-container {
+        height: 30%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: .25rem;
+        padding-top: .2rem;
+    }
+
+    .event-ball {
+        display: inline-block;
+        height: .75rem;
+        width: .75rem;
+        border-radius: 50%;
+    }
+
+    .event {
+        font-size: .75rem;
+    }
+
+    .event-details {
+        display: none;
+    }
+
+    .current-day {
+        background-color: rgba(255, 255, 255, .5);
+        border: outset 1px;
+        border-radius: 50%;
+        width: fit-content;
+        padding: 0 .4rem .1rem .4rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #details-container {
+        width: 90%;
+        padding-bottom: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.75;
+    }
+
+    @media all and (min-width: 768px) {
+        #calendar-container {
+            padding-top: 2rem;
+        }
+
+        .event {
+            font-size: 1rem;
+        }
+
+        .event-details {
+            font-size: 1rem;
+        }
+    }
+
+    /*Event Types*/
+    .children {
+        background-color: skyblue;
+    }
+
+    .closing {
+        background-color: gray;
+    }
+
+    .concert {
+        background-color: purple;
+    }
+
+    .sale {
+        background-color: green;
+    }
+
+    .special {
+        background-color: gold;
+    }
+
+    .wedding {
+        background-color: pink;
+    }
+
+    .workshop {
+        background-color: lightgreen;
+    }
+}

@@ -4,7 +4,8 @@
   margin: 0;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -13,6 +14,7 @@ body {
   min-height: 100vh;
 }
 
+/***Components***/
 /*Header*/
 header {
   background-color: darkgreen;
@@ -84,8 +86,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  -webkit-text-decoration: underline black 6%;
-          text-decoration: underline black 6%;
+  text-decoration: underline black 6%;
   text-underline-offset: 0.25em;
 }
 
@@ -125,4 +126,618 @@ footer ul {
   gap: 0.5rem;
   list-style: none;
   font-size: 0.8rem;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*****Index*****/
+.index-page {
+  /*Slideshow*/
+  /*Main*/
+}
+.index-page .slideshow {
+  background-image: url(../images/gallery-promenade-1.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  transition: background-image 1s linear;
+}
+.index-page .slideshow-container {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.index-page .slideshow-container h1 {
+  font-family: "Italianno";
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px black;
+}
+.index-page .slideshow-container h2 {
+  font-family: "Fira Sans Extra Condensed";
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px black;
+}
+.index-page .slideshow-indicators {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.index-page .arrow {
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  padding: 0 1rem;
+  transition: background-color 0.3s;
+}
+.index-page .arrow:hover {
+  filter: brightness(70%);
+}
+.index-page .circles {
+  display: flex;
+  gap: 1rem;
+}
+.index-page .circle {
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  background-color: gray;
+  border-radius: 50%;
+  transition: background-color 0.5s;
+}
+.index-page .circle:hover {
+  filter: brightness(70%);
+}
+@media all and (min-width: 768px) {
+  .index-page .slideshow {
+    background-attachment: fixed;
+  }
+  .index-page .slideshow-container {
+    height: 70vh;
+  }
+  .index-page .slideshow-container h1 {
+    font-size: 8rem;
+  }
+  .index-page .slideshow-container h2 {
+    font-size: 3rem;
+  }
+}
+.index-page main {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  width: 95%;
+  padding-bottom: 2rem;
+  margin: 0 auto 2rem auto;
+}
+.index-page main h3 {
+  padding: 0.5rem;
+}
+.index-page main h4 {
+  background-color: maroon;
+  color: white;
+  padding: 0.5rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+.index-page main p {
+  line-height: 1.5rem;
+  padding: 0.5rem;
+}
+.index-page main ul {
+  padding: 0;
+  margin: 0;
+}
+.index-page main li {
+  list-style: square inside;
+  padding: 0.1rem 0;
+}
+.index-page main button {
+  padding: 0.5rem;
+  box-shadow: 1px 1px 2px;
+  margin: 0.5rem;
+}
+
+/***Visit***/
+.visit-page {
+  background-image: url(../images/gallery-ceremonial-1.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+.visit-page main {
+  padding: 0.5rem 0 2rem 0;
+}
+.visit-page #intro-section {
+  background-color: oldlace;
+  overflow: auto;
+  width: 90%;
+  height: auto;
+  padding: 0.5rem;
+  border-radius: 0.4em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.6rem;
+}
+.visit-page #intro-section h1 {
+  background-color: maroon;
+  color: white;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 0.4em;
+  margin-bottom: 0.5rem;
+}
+.visit-page #intro-section p {
+  font-size: 1rem;
+  padding: 0.3rem;
+  text-align: center;
+}
+.visit-page section {
+  background-color: oldlace;
+  overflow: auto;
+  width: 90%;
+  height: auto;
+  padding: 0.5rem 0.5rem 0.8rem 0.5rem;
+  border-radius: 0.4rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.6rem;
+}
+.visit-page section h2 {
+  background-color: maroon;
+  color: white;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 0.3rem;
+  border-radius: 0.4em;
+  margin-bottom: 0.5rem;
+}
+.visit-page section img {
+  float: left;
+  width: 100%;
+  height: auto;
+  border-radius: 0.4em;
+}
+.visit-page section p {
+  clear: both;
+  font-size: 1rem;
+  padding: 0.3rem;
+}
+@media all and (min-width: 768px) {
+  .visit-page #intro-section img {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .visit-page section h2 {
+    float: right;
+    width: 48%;
+  }
+  .visit-page section img {
+    width: 50%;
+    float: left;
+  }
+  .visit-page section p {
+    clear: none;
+    float: right;
+    width: 48%;
+  }
+}
+@media all and (min-width: 992px) {
+  .visit-page #intro-section {
+    padding-bottom: 1rem;
+  }
+  .visit-page #intro-section h1 {
+    font-size: 1.5rem;
+  }
+  .visit-page section h2 {
+    width: 68%;
+    font-size: 1.5rem;
+  }
+  .visit-page section img {
+    width: 30%;
+  }
+  .visit-page section p {
+    width: 68%;
+  }
+}
+
+/***Calendar***/
+.calendar-page {
+  background-image: url(../images/gallery-festival-1.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  /*Event Types*/
+}
+.calendar-page main {
+  width: 96%;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
+}
+.calendar-page #calendar-container {
+  height: 55vh;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  text-align: center;
+  padding-top: 1rem;
+}
+.calendar-page .date-box {
+  justify-self: center stretch;
+  overflow: hidden;
+  cursor: pointer;
+  border: inset 1px transparent;
+  border-radius: 0.2em;
+}
+.calendar-page .date-box:hover {
+  border: outset 1px black;
+}
+.calendar-page .month-row {
+  font-weight: bold;
+}
+.calendar-page #left-arrow {
+  grid-column: 1/2;
+  cursor: pointer;
+}
+.calendar-page #month-year-name {
+  font-size: 1.2rem;
+  grid-column: 2/7;
+}
+.calendar-page #right-arrow {
+  grid-column: 7/8;
+  cursor: pointer;
+}
+.calendar-page .arrow {
+  height: 1rem;
+}
+.calendar-page .week-row {
+  font-weight: bold;
+}
+.calendar-page .date {
+  color: black;
+  font-weight: bold;
+  margin-top: 0.1rem;
+}
+.calendar-page .overflow-date {
+  opacity: 30%;
+}
+.calendar-page .event-container {
+  height: 30%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.25rem;
+  padding-top: 0.2rem;
+}
+.calendar-page .event-ball {
+  display: inline-block;
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 50%;
+}
+.calendar-page .event {
+  font-size: 0.75rem;
+}
+.calendar-page .event-details {
+  display: none;
+}
+.calendar-page .current-day {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: outset 1px;
+  border-radius: 50%;
+  width: fit-content;
+  padding: 0 0.4rem 0.1rem 0.4rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.calendar-page #details-container {
+  width: 90%;
+  padding-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+}
+@media all and (min-width: 768px) {
+  .calendar-page #calendar-container {
+    padding-top: 2rem;
+  }
+  .calendar-page .event {
+    font-size: 1rem;
+  }
+  .calendar-page .event-details {
+    font-size: 1rem;
+  }
+}
+.calendar-page .children {
+  background-color: skyblue;
+}
+.calendar-page .closing {
+  background-color: gray;
+}
+.calendar-page .concert {
+  background-color: purple;
+}
+.calendar-page .sale {
+  background-color: green;
+}
+.calendar-page .special {
+  background-color: gold;
+}
+.calendar-page .wedding {
+  background-color: pink;
+}
+.calendar-page .workshop {
+  background-color: lightgreen;
+}
+
+/***Memberships***/
+.memberships-page {
+  background-color: white;
+  background-image: url(../images/gallery-chapel-1.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+.memberships-page #opener {
+  background-color: oldlace;
+  margin: 0.5rem 0;
+}
+.memberships-page #opener h1 {
+  background-color: maroon;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.3rem;
+}
+.memberships-page #opener p {
+  width: 90%;
+  text-align: center;
+  margin: auto;
+}
+.memberships-page .memberships-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 70vh;
+}
+.memberships-page .membership-box {
+  background-color: oldlace;
+  text-align: center;
+  border: 1px solid black;
+}
+.memberships-page .membership-features {
+  height: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+.memberships-page .membership-features h2 {
+  color: white;
+  background-color: maroon;
+  font-size: 1.2rem;
+  text-shadow: 3px 2px 3px black;
+  width: 100%;
+  padding-top: 0.2rem;
+}
+.memberships-page .membership-features h3 {
+  color: white;
+  background-color: maroon;
+  font-size: 1.5rem;
+  text-shadow: 3px 2px 3px black;
+  width: 100%;
+}
+.memberships-page .membership-features a {
+  background: linear-gradient(180deg, maroon 50%, oldlace 50%);
+  display: block;
+  width: 100%;
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 0 0.5rem 0;
+}
+.memberships-page .membership-features h4 {
+  background-color: white;
+  display: inline;
+  border-style: outset;
+  border-radius: 10%;
+  padding: 0.2rem 0.5rem;
+}
+.memberships-page .membership-features h4:active {
+  border-style: inset;
+}
+.memberships-page .membership-features p {
+  display: none;
+  width: 90%;
+  margin: auto;
+}
+.memberships-page .membership-features.show-by-default p {
+  display: block;
+}
+@media all and (min-width: 480px) {
+  .memberships-page .memberships-container {
+    justify-content: space-evenly;
+  }
+  .memberships-page .membership-box {
+    gap: 2rem;
+    border: 3px solid black;
+  }
+  .memberships-page .membership-features h2 {
+    font-size: 1.5rem;
+  }
+  .memberships-page .membership-features h3 {
+    font-size: 1.75rem;
+  }
+  .memberships-page .membership-features p {
+    display: block;
+    padding: 0.1rem;
+  }
+}
+@media all and (min-width: 992px) {
+  .memberships-page .memberships-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 70vh;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  .memberships-page .membership-box {
+    min-width: 25vw;
+  }
+  .memberships-page .membership-features {
+    min-height: 60vh;
+    width: 25vw;
+    justify-content: center;
+  }
+  .memberships-page .membership-features h2 {
+    font-size: 2.5rem;
+    padding-top: 0.5rem;
+  }
+  .memberships-page .membership-features h3 {
+    font-size: 4rem;
+  }
+  .memberships-page .membership-features a {
+    font-size: 1.5rem;
+  }
+  .memberships-page .membership-features p {
+    font-size: 1.25rem;
+  }
+}
+
+/***Cafe***/
+.cafe-page .tangerine-regular {
+  font-family: "Tangerine", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.cafe-page .tangerine-bold {
+  font-family: "Tangerine", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+.cafe-page main {
+  background-color: black;
+  min-height: 90vh;
+  padding-bottom: 3rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0px 0px 20px 5px pink inset;
+}
+.cafe-page h1 {
+  background-color: black;
+  color: white;
+  font-family: "Tangerine", cursive;
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 2px 2px black;
+  padding: 1.5rem 0;
+  box-shadow: 0px 25px 20px 5px pink inset;
+}
+.cafe-page #menu-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+  width: 85%;
+  padding: 1rem 0;
+  border-radius: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 0px 5px 0px pink inset;
+  gap: 1rem;
+}
+.cafe-page .menu-category {
+  display: flex;
+  align-items: center;
+  background-color: #555;
+  width: 90%;
+  height: auto;
+  border-radius: 1em;
+  margin: 0 auto;
+  overflow: auto;
+  box-shadow: 0px 0px 10px 0px white inset;
+}
+.cafe-page .menu-category img {
+  height: 10vh;
+  width: auto;
+  box-shadow: 0px 0px 30px 1px white;
+}
+.cafe-page .menu-category h2 {
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-weight: lighter;
+  font-size: 1rem;
+  text-shadow: 2px 2px black;
+  color: white;
+  padding-left: 1.25em;
+}
+@media all and (min-width: 768px) {
+  .cafe-page #menu-container {
+    width: 90%;
+  }
+}
+
+/*****Gallery*****/
+.gallery-page {
+  background-color: black;
+}
+.gallery-page #highlight-container {
+  position: relative;
+  background-color: black;
+  padding-top: 1rem;
+}
+.gallery-page #gallery-highlight {
+  display: block;
+  max-width: 95vw;
+  max-height: 80vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: black;
+}
+.gallery-page #gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 95vw;
+}
+.gallery-page #thumbnails-container {
+  width: 95vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 1rem 0rem 2.5rem 0rem;
+  margin: auto;
+  row-gap: 0.5rem;
+}
+.gallery-page .gallery-thumbnails {
+  width: 30vw;
+}
+.gallery-page .gallery-thumbnails:hover {
+  cursor: pointer;
+  filter: brightness(70%);
+}
+
+/*# sourceMappingURL=style.css.map */
