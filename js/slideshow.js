@@ -16,7 +16,7 @@ function preload(_slides, callback) {
         let img = new Image();
         img.src = imageLink.slice(4, -1);
         // Adds to running total when image loads
-        img.onload = function() {
+        img.onload = function () {
             loadedImagesCount++;
             // Runs callback function once all images have loaded
             if (loadedImagesCount === _slides.length) {
@@ -38,7 +38,7 @@ function toggleTransition(applyTransition) {
     if (circles[currIndex]) {
         circles[currIndex].style.backgroundColor = "white";
     }
-    
+
     // Toggles the transition effect based on the parameter
     slideshow.style.transition = applyTransition ? "background-image 1s linear" : "none";
     slideshow.style.backgroundImage = slides[currIndex];
@@ -68,7 +68,7 @@ function changeSlide(direction) {
 
 function pauseSlideshow() {
     clearTimeout(slideshowTimeout);
-    slideshowTimeout = setTimeout(function() {
+    slideshowTimeout = setTimeout(function () {
         toggleTransition(true);
         showNextSlide();
     }, resumeDelay);
@@ -78,25 +78,25 @@ function startSlideshow() {
     slideshowTimeout = setTimeout(showNextSlide, transitionDelay);
 
     // Adds event listeners to pause on click and change slide
-    document.getElementsByClassName("left-arrow")[0].addEventListener("click", function() {
+    document.getElementsByClassName("left-arrow")[0].addEventListener("click", function () {
         pauseSlideshow();
         changeSlide("left");
     });
 
-    document.getElementsByClassName("right-arrow")[0].addEventListener("click", function() {
+    document.getElementsByClassName("right-arrow")[0].addEventListener("click", function () {
         pauseSlideshow();
         changeSlide("right");
     });
 
-    document.querySelectorAll(".circle").forEach(function(element, index) {
-        element.addEventListener("click", function() {
+    document.querySelectorAll(".circle").forEach(function (element, index) {
+        element.addEventListener("click", function () {
             pauseSlideshow();
             changeSlide(index);
         });
     });
 }
 
-window.onload = function() {
+window.onload = function () {
     preload(slides, startSlideshow);
     document.getElementsByClassName("circle")[0].style.backgroundColor = "white";
 }

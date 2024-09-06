@@ -7,24 +7,24 @@ class Photo {
 
 function loadPhotos() {
     fetch("data/photos.json")
-        .then(function(response) {
+        .then(function (response) {
             return response.json();
         })
-        .then(function(data) {
-            const photos = data.map(function(item) {
+        .then(function (data) {
+            const photos = data.map(function (item) {
                 return new Photo(item.source, item.caption);
             });
             generateThumbnails(photos);
             changeImage(photos);
         })
-        .catch(function(error) {
+        .catch(function (error) {
             console.error("Error loading photos: ", error);
         });
 }
 
 function generateThumbnails(photos) {
     const container = document.querySelector("#thumbnails-container");
-    photos.forEach(function(photo) {
+    photos.forEach(function (photo) {
         const img = document.createElement("img");
         img.src = photo.source;
         img.className = "gallery-thumbnails";
@@ -37,15 +37,15 @@ function changeImage(photos) {
     const highlightImage = document.getElementById("gallery-highlight");
     let caption = document.getElementById("gallery-caption");
     let previousImage = galleryImages[0];
-    
+
     // Sets first thumbnail to appear "selected"
     galleryImages[0].style.filter = "brightness(50%)";
     // Sets caption to first thumbnail's caption
     caption.textContent = photos[0].caption;
 
     // Loops through each element, adding click event listener
-    Array.from(galleryImages).forEach(function(item, index) {
-        item.addEventListener("click", function() {
+    Array.from(galleryImages).forEach(function (item, index) {
+        item.addEventListener("click", function () {
             // Sets highlightImage source
             highlightImage.src = photos[index].source;
             // Sets caption
